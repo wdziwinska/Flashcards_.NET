@@ -29,7 +29,6 @@ namespace Fiszki_projekt
             InitializeComponent();
             test.Visibility = Visibility.Collapsed;
             Phrase.Text = engine.setCurrentWordinFirstLanguage();
-
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
