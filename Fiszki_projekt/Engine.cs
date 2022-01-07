@@ -14,7 +14,7 @@ namespace Fiszki_projekt
 
         public Engine()
         {
-           phrases = PhrasesDBImplementationObject.getWord(1, 1, 2);
+           phrases = PhrasesDBImplementationObject.getWord(1, 2, 4);
         }
 
         public string setCurrentWordinFirstLanguage()
