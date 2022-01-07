@@ -14,6 +14,7 @@ namespace Fiszki_projekt
         }
 
 
+
        public List<(string,string)> getWord(int phraseId, int firstLanguageId, int secondLangueId)
         {
             // <1,pies,dog> ---- <2,kot,cat> ------ <3,kiedy,when>
