@@ -1,0 +1,24 @@
+﻿<Window x:Class="Fiszki_projekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fiszki_projekt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="437" Width="468" Background="#FF2E3349">
+    <Grid x:Name="grid" Visibility="Visible">
+
+        <Grid x:Name="menu" Visibility="Visible">
+            <Button x:Name="Start" Content="Start" HorizontalAlignment="Center" Margin="0,138,0,0" VerticalAlignment="Top" Click="Start_Click" Foreground="#FF86C3FF" FontFamily="Nirmala UI" FontSize="50" Background="#FF2B303C" Height="82" Width="164" BorderBrush="#FF2E3349" />
+        </Grid>
+
+        <Grid x:Name="test" Visibility="Visible">
+            <Button x:Name="nie_znam" Content="Nie znam"  Margin="47,348,316,0" VerticalAlignment="Top" Click="nie_umiem_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="45" FontSize="16"/>
+            <Button x:Name="pokaz_tlumaczenie" Content="Pokaż tłumaczenie" HorizontalAlignment="Center" Margin="0,348,0,0" VerticalAlignment="Top" Click="pokaz_tlumaczenie_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="45"  FontSize="16"/>
+            <Button x:Name="Znam" Content="Znam" Margin="323,348,39,0" VerticalAlignment="Top" Click="Znam_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="45" FontSize="16" />
+            <TextBox x:Name="Phrase" Height="264" Text="slowko" TextWrapping="Wrap" Width="228" FontSize="22" TextChanged="TextBox_TextChanged" Background="#FF2B303C" Foreground="#FF86C3FF" FontFamily="Nirmala UI" TextAlignment="Center" VerticalContentAlignment="Center" />
+            <Button x:Name="Wroc" Content="Wroc" Margin="239,10,12,0" VerticalAlignment="Top" Click="Wroc_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="43" Width="81" FontSize="16"/>
+        </Grid>
+    </Grid>
+
+</Window>
