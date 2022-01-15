@@ -6,5 +6,6 @@ namespace Fiszki_projekt
 {
     interface KnownWordsDBInterface
     {
+        void storeKnownWorld (int phraseId,int firstLanguageId, int secondLanguageId, string phraseInFirstLanguage, string phraseInSecondLanguage);
     }
 }

@@ -10,11 +10,16 @@ namespace Fiszki_projekt
     {
         
         PhrasesDBImplementation PhrasesDBImplementationObject = new PhrasesDBImplementation();
+        KnownWordsDBImplementation KnownWordsDBImplementationObject = new KnownWordsDBImplementation();
         public List<(string, string)> phrases;
+
+        private int firstLanguageId = 1; // te zmienne powinne byc przypisane przez gui
+        private int secondLanguageId = 2;
+
 
         public Engine()
         {
-           phrases = PhrasesDBImplementationObject.getWord(1, 2, 4);
+           phrases = PhrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
         }
 
         public string setCurrentWordinFirstLanguage()
@@ -44,6 +49,10 @@ namespace Fiszki_projekt
             return "//Koniec cwiczenia//";
         }
 
+        public void storeKnownWords()
+        {
+            KnownWordsDBImplementationObject.storeKnownWorld(1,firstLanguageId,secondLanguageId,getCurrentWordinFirstLanguage(),getCurrentWordInSecondLanguage());
+        }
         
 
        

@@ -58,7 +58,7 @@ namespace Fiszki_projekt
             {
                 engine.phrases.RemoveAt(0);
             }
-            
+            engine.storeKnownWords();
             Phrase.Text = engine.setCurrentWordinFirstLanguage();
         }
 
