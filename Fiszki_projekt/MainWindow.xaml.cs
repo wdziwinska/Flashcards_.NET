@@ -54,11 +54,12 @@ namespace Fiszki_projekt
         private void Znam_Click(object sender, RoutedEventArgs e)
         {
             translated = false;
+            engine.storeKnownWords();
             if (engine.phrases.Count > 0)
             {
                 engine.phrases.RemoveAt(0);
             }
-            engine.storeKnownWords();
+            
             Phrase.Text = engine.setCurrentWordinFirstLanguage();
         }
 
