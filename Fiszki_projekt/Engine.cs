@@ -14,14 +14,14 @@ namespace Fiszki_projekt
         RepetitionsDBImplementation repetitionsDBImplementationObject = new RepetitionsDBImplementation();
         public List<(int,string, string)> phrases;
 
-        private int firstLanguageId =1; // te zmienne powinne byc przypisane przez gui
+        private int firstLanguageId =4; // te zmienne powinne byc przypisane przez gui
         private int secondLanguageId =5;
 
 
         public Engine()
         {
-           //phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
-          phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
+          phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
+          //phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
         }
 
         public string setCurrentWordinFirstLanguage()
