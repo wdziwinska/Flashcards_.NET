@@ -20,8 +20,8 @@ namespace Fiszki_projekt
 
         public Engine()
         {
-           phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
-          // phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
+           //phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
+          phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
         }
 
         public string setCurrentWordinFirstLanguage()

@@ -8,9 +8,11 @@ namespace Fiszki_projekt
 {
     internal class RepetitionsDBImplementation : RepetitionsDBInterface
     {
+       
 
         public List<(int, string, string)> getWordsForRepetition(int firstLanguageId, int secondLanguageId)
         {
+            (int, string, string) tuple = (0, "", "");
             using (var reader = new StreamReader(@"wordsForRepetition.csv"))
             {
               //  reader.ReadLine();
@@ -22,8 +24,11 @@ namespace Fiszki_projekt
                     var lines = reader.ReadLine();
                     var values = lines.Split(";");
                     // System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLanguageId]);
-                    (int, string, string) tuple = (Int32.Parse(values[0]), values[firstLanguageId], values[secondLanguageId]);
-                    retList.Add(tuple);
+                    if (isWordAddedToRepetitions(Int32.Parse(values[0]),firstLanguageId, secondLanguageId))
+                    {
+                        tuple = (Int32.Parse(values[0]), values[firstLanguageId], values[secondLanguageId]);
+                        retList.Add(tuple);
+                    }
                     //licznik++; 
                 }
                 reader.Close();
