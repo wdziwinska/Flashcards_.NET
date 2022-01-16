@@ -57,5 +57,33 @@ namespace Fiszki_projekt
             csv.Append("\n");
             File.AppendAllText("knownWordsDatabase.csv", csv.ToString());
         }
+
+        public bool isWordKnown(int phraseId, int firstLanguageId, int secondLanguageId)
+        {
+            using (var reader = new StreamReader(@"BazaSlowek.csv"))
+            {
+                reader.ReadLine();
+                while (!reader.EndOfStream)
+                {
+                    var lines = reader.ReadLine();
+                    var values = lines.Split(";");
+                    //System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLangueId]);
+                    if (Int32.Parse(values[0]) == phraseId) // jezeli jest to id
+                    {
+                        // oba musza byc nie puste, zeby to slowo bylo uznane za zrozumiane
+                        if (values[firstLanguageId] != "" && values[secondLanguageId] != "") 
+                        {
+                            return true;
+                        }
+                     
+                    }
+                  
+                }
+                reader.Close();
+            
+            }
+            return false;
+        }
+
     }
 }

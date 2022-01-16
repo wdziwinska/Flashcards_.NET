@@ -15,7 +15,7 @@ namespace Fiszki_projekt
 
 
 
-       public List<(string,string)> getWord(int phraseId, int firstLanguageId, int secondLangueId)
+       public List<(string,string)> getWord(int phraseId, int firstLanguageId, int secondLanguageId)
         {
         
             using (var reader = new StreamReader(@"BazaSlowek.csv"))
@@ -29,7 +29,7 @@ namespace Fiszki_projekt
                     var lines = reader.ReadLine();
                     var values = lines.Split(";");
                     //System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLangueId]);
-                    (string,string) tuple = (values[firstLanguageId], values[secondLangueId]);
+                    (string,string) tuple = (values[firstLanguageId], values[secondLanguageId]);
                     retList.Add(tuple);
                     //licznik++; 
                 }
