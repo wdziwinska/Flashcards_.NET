@@ -67,7 +67,7 @@ namespace Fiszki_projekt
                     csv.Append(values[i]+";");
                 } 
                 List<string> lines = File.ReadAllLines("knownWordsDatabase.csv").ToList();
-                System.Diagnostics.Debug.WriteLine("Id frazy: " + pom);
+              //  System.Diagnostics.Debug.WriteLine("Id frazy: " + pom);
                 lines.RemoveAt(pom);
                 lines.Insert(pom,csv.ToString());
                 File.WriteAllLines("knownWordsDatabase.csv", lines.ToArray());
