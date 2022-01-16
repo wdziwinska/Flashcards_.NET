@@ -11,10 +11,11 @@ namespace Fiszki_projekt
         
         PhrasesDBImplementation phrasesDBImplementationObject = new PhrasesDBImplementation();
         KnownWordsDBImplementation knownWordsDBImplementationObject = new KnownWordsDBImplementation();
+        RepetitionsDBImplementation repetitionsDBImplementationObject = new RepetitionsDBImplementation();
         public List<(int,string, string)> phrases;
 
-        private int firstLanguageId =2; // te zmienne powinne byc przypisane przez gui
-        private int secondLanguageId =3;
+        private int firstLanguageId =1; // te zmienne powinne byc przypisane przez gui
+        private int secondLanguageId =5;
 
 
         public Engine()
@@ -49,12 +50,21 @@ namespace Fiszki_projekt
             return "//Koniec cwiczenia//";
         }
 
-        public void storeKnownWords()
+        public void storeKnownWord()
         {
             // jezeli slowko nie jest zapisane to je zapisz
             knownWordsDBImplementationObject.storeKnownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage());
+            repetitionsDBImplementationObject.removeWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId);
         }
        
+        public void storeUnknownWord()
+        {   
+           if (!knownWordsDBImplementationObject.isWordKnown(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId))
+           {
+                repetitionsDBImplementationObject.storeUnknownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage());
+           }
+            
+        }
 
     }
 }

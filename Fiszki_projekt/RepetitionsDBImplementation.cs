@@ -11,7 +11,7 @@ namespace Fiszki_projekt
 
         public List<(int, string, string)> getWordsForRepetition(int firstLanguageId, int secondLanguageId)
         {
-            using (var reader = new StreamReader(@"BazaSlowek.csv"))
+            using (var reader = new StreamReader(@"wordsForRepetition.csv"))
             {
                 reader.ReadLine();
                 //int licznik = 0;
@@ -64,6 +64,8 @@ namespace Fiszki_projekt
             string fId = firstLanguageId.ToString();
             string sId = secondLanguageId.ToString();
             string[] values = { "" };
+            int counter = -1;
+            bool shouldIWriteBack = false;
             // jezeli nie ma slowa to wracaj
             if (!isWordAddedToRepetitions(phraseId, firstLanguageId, secondLanguageId))
             {
@@ -79,6 +81,7 @@ namespace Fiszki_projekt
                 {
                     var lines = reader.ReadLine();
                     values = lines.Split(";");
+                    counter++;
                     if (Int32.Parse(values[0]) == phraseId) // jezeli jest to id to sie zapisuja sie linia do values
                     {
                         break;
@@ -87,8 +90,19 @@ namespace Fiszki_projekt
                 reader.Close();
             }
             int pom = Int32.Parse(values[0]) - 1;
+            // usuwam slowa ktore zaznaczylem ze umiem
+
             values[firstLanguageId] = "";
             values[secondLanguageId] = "";
+
+            for (int i=1; i<values.Length; i++)
+            {
+                // jezeli ktoras wartosc nie jest pusta, oznacza to, ze sa tam slowa ktorych nie umiem wiec trzeba to wpisac z powrotem
+                if (values[i] != "")
+                {
+                    shouldIWriteBack= true;
+                }
+            }
 
             for (int i = 0; i < values.Length; i++)
             {
@@ -96,9 +110,14 @@ namespace Fiszki_projekt
             }
 
             List<string> lines2 = File.ReadAllLines("wordsForRepetition.csv").ToList();
-            //  System.Diagnostics.Debug.WriteLine("Id frazy: " + pom);
-            lines2.RemoveAt(pom);
-            lines2.Insert(pom, csv.ToString());
+          //  System.Diagnostics.Debug.WriteLine("Id frazy: " + pom);
+            lines2.RemoveAt(counter);
+
+            if (shouldIWriteBack)
+            {
+                lines2.Insert(counter, csv.ToString());
+            }
+           
             File.WriteAllLines("wordsForRepetition.csv", lines2.ToArray());
         }
 
@@ -111,6 +130,7 @@ namespace Fiszki_projekt
             bool isInDB = false; // wpierw trzeba sprawdzic czy dana fraza jest w bazie, zeby wiedziec czy dopisac jezyk, czy cala fraze
                                  // nie mozna uzyc funkcji isWordKnown poniewaz jeden z jezykow jest nowy
 
+            int counter = -1;
             // jezeli slowko jest znane w obu jezykach to nic nie dopisuj
             string[] values = { "" };
             if (isWordAddedToRepetitions(phraseId, firstLanguageId, secondLanguageId))
@@ -127,6 +147,7 @@ namespace Fiszki_projekt
                 {
                     var lines = reader.ReadLine();
                     values = lines.Split(";");
+                    counter++;
                     if (Int32.Parse(values[0]) == phraseId) // jezeli jest to id
                     {
                         isInDB = true;
@@ -154,8 +175,8 @@ namespace Fiszki_projekt
                 }
                 List<string> lines = File.ReadAllLines("wordsForRepetition.csv").ToList();
                 //  System.Diagnostics.Debug.WriteLine("Id frazy: " + pom);
-                lines.RemoveAt(pom);
-                lines.Insert(pom, csv.ToString());
+                lines.RemoveAt(counter);
+                lines.Insert(counter, csv.ToString());
                 File.WriteAllLines("wordsForRepetition.csv", lines.ToArray());
 
             }

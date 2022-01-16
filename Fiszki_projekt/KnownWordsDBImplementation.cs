@@ -25,6 +25,7 @@ namespace Fiszki_projekt
             bool isInDB = false; // wpierw trzeba sprawdzic czy dana fraza jest w bazie, zeby wiedziec czy dopisac jezyk, czy cala fraze
                                  // nie mozna uzyc funkcji isWordKnown poniewaz jeden z jezykow jest nowy
 
+            int counter = -1;
             // jezeli slowko jest znane w obu jezykach to nic nie dopisuj
             string[] values = {""};
             if (isWordKnown(phraseId, firstLanguageId, secondLanguageId))
@@ -40,7 +41,8 @@ namespace Fiszki_projekt
                 while (!reader.EndOfStream)
                 {
                     var lines = reader.ReadLine();
-                    values = lines.Split(";");  
+                    values = lines.Split(";");
+                    counter++;
                     if (Int32.Parse(values[0]) == phraseId) // jezeli jest to id
                      {
                         isInDB = true;
@@ -68,8 +70,9 @@ namespace Fiszki_projekt
                 } 
                 List<string> lines = File.ReadAllLines("knownWordsDatabase.csv").ToList();
               //  System.Diagnostics.Debug.WriteLine("Id frazy: " + pom);
-                lines.RemoveAt(pom);
-                lines.Insert(pom,csv.ToString());
+                lines.RemoveAt(counter);
+                lines.Insert(counter,csv.ToString());
+                lines.Sort();
                 File.WriteAllLines("knownWordsDatabase.csv", lines.ToArray());
 
             }

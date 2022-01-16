@@ -54,7 +54,7 @@ namespace Fiszki_projekt
         private void Znam_Click(object sender, RoutedEventArgs e)
         {
             translated = false;
-            engine.storeKnownWords();
+            engine.storeKnownWord();
             if (engine.phrases.Count > 0)
             {
                 engine.phrases.RemoveAt(0);
@@ -66,6 +66,7 @@ namespace Fiszki_projekt
         private void nie_umiem_Click(object sender, RoutedEventArgs e)
         {
             translated = false;
+            engine.storeUnknownWord();
             if (engine.phrases.Count > 0)
             {
                 engine.phrases.RemoveAt(0);
