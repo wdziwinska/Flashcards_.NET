@@ -13,8 +13,8 @@ namespace Fiszki_projekt
         KnownWordsDBImplementation knownWordsDBImplementationObject = new KnownWordsDBImplementation();
         public List<(int,string, string)> phrases;
 
-        private int firstLanguageId =2; // te zmienne powinne byc przypisane przez gui
-        private int secondLanguageId = 1;
+        private int firstLanguageId =4; // te zmienne powinne byc przypisane przez gui
+        private int secondLanguageId =5;
 
 
         public Engine()

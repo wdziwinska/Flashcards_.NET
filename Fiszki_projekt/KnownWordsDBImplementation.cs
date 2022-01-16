@@ -39,7 +39,6 @@ namespace Fiszki_projekt
                 reader.BaseStream.Position = 0;
                 while (!reader.EndOfStream)
                 {
-                    // to nie dziala bo to sie nie wywoluje przez to, ze jest isknownword zwraca true wiec w engine ta funkcja storeKnownWord sie nie wywoluje
                     var lines = reader.ReadLine();
                     values = lines.Split(";");  
                     if (Int32.Parse(values[0]) == phraseId) // jezeli jest to id
@@ -54,7 +53,6 @@ namespace Fiszki_projekt
 
             if (isInDB) // jezeli id jest w bazie, to trzeba dopisac jedno z jezykow
             {
-               // System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLanguageId]);
                 int pom = Int32.Parse(values[0])-1;
                 if (values[firstLanguageId] == "")
                 {
@@ -67,15 +65,13 @@ namespace Fiszki_projekt
                 for (int i = 0; i < values.Length; i++)
                 {
                     csv.Append(values[i]+";");
-                }
-            //    csv.Append("\n");
+                } 
                 List<string> lines = File.ReadAllLines("knownWordsDatabase.csv").ToList();
                 System.Diagnostics.Debug.WriteLine("Id frazy: " + pom);
                 lines.RemoveAt(pom);
                 lines.Insert(pom,csv.ToString());
-              //  lines.Sort();
                 File.WriteAllLines("knownWordsDatabase.csv", lines.ToArray());
-             //   File.AppendAllText("knownWordsDatabase.csv",csv.ToString());
+
             }
             else // jezel nie jest w bazie to trzeba dopisac cala fraze
             {
