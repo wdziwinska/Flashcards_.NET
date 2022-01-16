@@ -52,17 +52,15 @@ namespace Fiszki_projekt
                     csv.Append(";");
                 }
             }
-
-
             csv.Append("\n");
             File.AppendAllText("knownWordsDatabase.csv", csv.ToString());
         }
 
         public bool isWordKnown(int phraseId, int firstLanguageId, int secondLanguageId)
         {
-            using (var reader = new StreamReader(@"BazaSlowek.csv"))
+            using (var reader = new StreamReader(@"knownWordsDatabase.csv"))
             {
-                reader.ReadLine();
+                //reader.ReadLine(); ta linijka musi byc gdy bedzie poprawny naglowek
                 while (!reader.EndOfStream)
                 {
                     var lines = reader.ReadLine();
@@ -73,6 +71,7 @@ namespace Fiszki_projekt
                         // oba musza byc nie puste, zeby to slowo bylo uznane za zrozumiane
                         if (values[firstLanguageId] != "" && values[secondLanguageId] != "") 
                         {
+                            System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLanguageId]);
                             return true;
                         }
                      
@@ -80,9 +79,9 @@ namespace Fiszki_projekt
                   
                 }
                 reader.Close();
-            
+                return false;
             }
-            return false;
+          
         }
 
     }

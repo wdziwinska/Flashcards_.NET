@@ -9,24 +9,24 @@ namespace Fiszki_projekt
     public class Engine : LearningProcessManager, WordClassifier, WordGetter, Initializer, WordSetter
     {
         
-        PhrasesDBImplementation PhrasesDBImplementationObject = new PhrasesDBImplementation();
-        KnownWordsDBImplementation KnownWordsDBImplementationObject = new KnownWordsDBImplementation();
-        public List<(string, string)> phrases;
+        PhrasesDBImplementation phrasesDBImplementationObject = new PhrasesDBImplementation();
+        KnownWordsDBImplementation knownWordsDBImplementationObject = new KnownWordsDBImplementation();
+        public List<(int,string, string)> phrases;
 
-        private int firstLanguageId = 4; // te zmienne powinne byc przypisane przez gui
-        private int secondLanguageId = 3;
+        private int firstLanguageId = 3; // te zmienne powinne byc przypisane przez gui
+        private int secondLanguageId = 4;
 
 
         public Engine()
         {
-           phrases = PhrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
+           phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
         }
 
         public string setCurrentWordinFirstLanguage()
         {
             if (phrases.Count > 0)
             {
-                return phrases.ElementAt(0).Item1;
+                return phrases.ElementAt(0).Item2;
             }
             return "//Koniec cwiczenia//";
         }
@@ -34,7 +34,7 @@ namespace Fiszki_projekt
         {
             if (phrases.Count > 0)
             {
-                return phrases.ElementAt(0).Item1;
+                return phrases.ElementAt(0).Item2;
             }
             return "//Koniec cwiczenia//";
         }
@@ -44,14 +44,19 @@ namespace Fiszki_projekt
 
             if (phrases.Count > 0)
             {
-                return phrases.ElementAt(0).Item2;
+                return phrases.ElementAt(0).Item3;
             }
             return "//Koniec cwiczenia//";
         }
 
         public void storeKnownWords()
         {
-            KnownWordsDBImplementationObject.storeKnownWorld(1,firstLanguageId,secondLanguageId,getCurrentWordinFirstLanguage(),getCurrentWordInSecondLanguage());
+            // jezeli slowko nie jest zapisane to je zapisz
+            if (!knownWordsDBImplementationObject.isWordKnown(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId))
+            {
+                knownWordsDBImplementationObject.storeKnownWorld(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage());
+            }
+           
         }
         
 
