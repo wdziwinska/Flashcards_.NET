@@ -13,8 +13,8 @@ namespace Fiszki_projekt
         KnownWordsDBImplementation knownWordsDBImplementationObject = new KnownWordsDBImplementation();
         public List<(int,string, string)> phrases;
 
-        private int firstLanguageId = 3; // te zmienne powinne byc przypisane przez gui
-        private int secondLanguageId = 4;
+        private int firstLanguageId =2; // te zmienne powinne byc przypisane przez gui
+        private int secondLanguageId = 1;
 
 
         public Engine()
@@ -52,16 +52,9 @@ namespace Fiszki_projekt
         public void storeKnownWords()
         {
             // jezeli slowko nie jest zapisane to je zapisz
-            if (!knownWordsDBImplementationObject.isWordKnown(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId))
-            {
-                knownWordsDBImplementationObject.storeKnownWorld(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage());
-            }
-           
+            knownWordsDBImplementationObject.storeKnownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage());
         }
-        
-
        
-
 
     }
 }

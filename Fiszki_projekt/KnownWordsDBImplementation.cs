@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 // 1 - Polski
@@ -15,45 +16,89 @@ namespace Fiszki_projekt
 {
     internal class KnownWordsDBImplementation : KnownWordsDBInterface
     {
-        public void storeKnownWorld(int phraseId, int firstLanguageId, int secondLanguageId, string phraseInFirstLanguage, string phraseInSecondLanguage)
+        public void storeKnownWord(int phraseId, int firstLanguageId, int secondLanguageId, string phraseInFirstLanguage, string phraseInSecondLanguage)
         {
             var csv = new StringBuilder();
-            var pId = phraseId.ToString();
-            var fId = firstLanguageId.ToString();
-            var sId = secondLanguageId.ToString();
-            // var newLine = string.Format("{0};{1};{2}", pId, phraseInFirstLanguage, phraseInSecondLanguage);
-            // csv.Append(newLine);
-            // csv.Append("testwubwub\n");
-            csv.Append(pId + ";");
-           /* if (firstLanguageId == 1)
+            string pId = phraseId.ToString();
+            string fId = firstLanguageId.ToString();
+            string sId = secondLanguageId.ToString();
+            bool isInDB = false; // wpierw trzeba sprawdzic czy dana fraza jest w bazie, zeby wiedziec czy dopisac jezyk, czy cala fraze
+                                 // nie mozna uzyc funkcji isWordKnown poniewaz jeden z jezykow jest nowy
+
+            // jezeli slowko jest znane w obu jezykach to nic nie dopisuj
+            string[] values = {""};
+            if (isWordKnown(phraseId, firstLanguageId, secondLanguageId))
             {
-                csv.Append(phraseInFirstLanguage+";");
+                return;
             }
-            else if (secondLanguageId == 1)
+
+            using (var reader = new StreamReader(@"knownWordsDatabase.csv"))
             {
-                csv.Append(phraseInSecondLanguage+";");
+                //reader.ReadLine(); ta linijka musi byc gdy bedzie poprawny naglowek
+                reader.DiscardBufferedData();
+                reader.BaseStream.Position = 0;
+                while (!reader.EndOfStream)
+                {
+                    // to nie dziala bo to sie nie wywoluje przez to, ze jest isknownword zwraca true wiec w engine ta funkcja storeKnownWord sie nie wywoluje
+                    var lines = reader.ReadLine();
+                    values = lines.Split(";");  
+                    if (Int32.Parse(values[0]) == phraseId) // jezeli jest to id
+                     {
+                        isInDB = true;
+                        break;
+                     }
+                }
+                reader.Close();
+
             }
-            else
+
+            if (isInDB) // jezeli id jest w bazie, to trzeba dopisac jedno z jezykow
             {
-                csv.Append(";");
-            }*/
-            for (int i = 1; i <= 6; i++)
-            {
-                if (firstLanguageId == i)
+               // System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLanguageId]);
+                int pom = Int32.Parse(values[0])-1;
+                if (values[firstLanguageId] == "")
                 {
-                    csv.Append(phraseInFirstLanguage + ";");
+                    values[firstLanguageId] = phraseInFirstLanguage;
                 }
-                else if (secondLanguageId == i)
+                if (values[secondLanguageId] == "")
                 {
-                    csv.Append(phraseInSecondLanguage + ";");
+                    values[secondLanguageId] = phraseInSecondLanguage;
                 }
-                else
+                for (int i = 0; i < values.Length; i++)
                 {
-                    csv.Append(";");
+                    csv.Append(values[i]+";");
                 }
+            //    csv.Append("\n");
+                List<string> lines = File.ReadAllLines("knownWordsDatabase.csv").ToList();
+                System.Diagnostics.Debug.WriteLine("Id frazy: " + pom);
+                lines.RemoveAt(pom);
+                lines.Insert(pom,csv.ToString());
+              //  lines.Sort();
+                File.WriteAllLines("knownWordsDatabase.csv", lines.ToArray());
+             //   File.AppendAllText("knownWordsDatabase.csv",csv.ToString());
             }
-            csv.Append("\n");
-            File.AppendAllText("knownWordsDatabase.csv", csv.ToString());
+            else // jezel nie jest w bazie to trzeba dopisac cala fraze
+            {
+                csv.Append(pId + ";");
+                for (int i = 1; i <= 6; i++)
+                {
+                    if (firstLanguageId == i)
+                    {
+                        csv.Append(phraseInFirstLanguage + ";");
+                    }
+                    else if (secondLanguageId == i)
+                    {
+                        csv.Append(phraseInSecondLanguage + ";");
+                    }
+                    else
+                    {
+                        csv.Append(";");
+                    }
+                }
+                csv.Append("\n");
+                File.AppendAllText("knownWordsDatabase.csv", csv.ToString());
+
+            }
         }
 
         public bool isWordKnown(int phraseId, int firstLanguageId, int secondLanguageId)
@@ -64,14 +109,13 @@ namespace Fiszki_projekt
                 while (!reader.EndOfStream)
                 {
                     var lines = reader.ReadLine();
-                    var values = lines.Split(";");
-                    //System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLangueId]);
+                    var values = lines.Split(";");  
                     if (Int32.Parse(values[0]) == phraseId) // jezeli jest to id
                     {
                         // oba musza byc nie puste, zeby to slowo bylo uznane za zrozumiane
                         if (values[firstLanguageId] != "" && values[secondLanguageId] != "") 
                         {
-                            System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLanguageId]);
+                         //   System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLanguageId]);
                             return true;
                         }
                      
