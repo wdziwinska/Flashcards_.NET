@@ -13,7 +13,7 @@ namespace Fiszki_projekt
         {
             using (var reader = new StreamReader(@"wordsForRepetition.csv"))
             {
-                reader.ReadLine();
+              //  reader.ReadLine();
                 //int licznik = 0;
                 var retList = new List<(int, string, string)>();
                 //while (!reader.EndOfStream && licznik<10)
