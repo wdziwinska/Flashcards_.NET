@@ -6,5 +6,8 @@ namespace Fiszki_projekt
 {
     interface Initializer
     {
+        void setLanguagesForLeaning(String firstLanguageName, String secondLanguageName);
+
+        void setNumberOfWordsToLearn();
     }
 }

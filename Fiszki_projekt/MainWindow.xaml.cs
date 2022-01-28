@@ -22,12 +22,14 @@ namespace Fiszki_projekt
     public partial class MainWindow : Window
     {
 
-        Engine engine = new Engine();
+        Engine engine = new Engine(4,5); //id fisrLanguage i id secondLangauge
         bool translated = false;
         public MainWindow()
         {
             InitializeComponent();
             test.Visibility = Visibility.Collapsed;
+            firstlanguage.Visibility = Visibility.Collapsed;
+            secondlanguage.Visibility = Visibility.Collapsed;
             Phrase.Text = engine.setCurrentWordinFirstLanguage();
         }
 
@@ -77,7 +79,7 @@ namespace Fiszki_projekt
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             menu.Visibility=Visibility.Collapsed;
-            test.Visibility = Visibility.Visible;
+            firstlanguage.Visibility = Visibility.Visible;
         }
       
 
@@ -87,5 +89,21 @@ namespace Fiszki_projekt
             menu.Visibility = Visibility.Visible;
         }
 
+        private void Submit_Click(object sender, RoutedEventArgs e)
+        {
+            firstlanguage.Visibility = Visibility.Collapsed;
+            test.Visibility = Visibility.Visible;
+        }
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            firstlanguage.Visibility = Visibility.Collapsed;
+            secondlanguage.Visibility = Visibility.Visible;
+        }
+        
+        private void CheckBoxSecondLanguage_Click(object sender, RoutedEventArgs e)
+        {
+            secondlanguage.Visibility = Visibility.Collapsed;
+            test.Visibility = Visibility.Visible;
+        }
     }
 }

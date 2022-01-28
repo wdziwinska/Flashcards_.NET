@@ -18,10 +18,12 @@ namespace Fiszki_projekt
         private int secondLanguageId =5;
 
 
-        public Engine()
+        public Engine(int firstLanguageId, int secondLanguageId)
         {
           phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
-          //phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
+            //phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
+            this.firstLanguageId = firstLanguageId;
+            this.secondLanguageId = secondLanguageId;
         }
 
         public string setCurrentWordinFirstLanguage()
@@ -74,6 +76,16 @@ namespace Fiszki_projekt
             }
             
             
+        }
+
+        public void setLanguagesForLeaning(String firstLanguageName, String secondLanguageName)
+        {
+
+        }
+
+        public void setNumberOfWordsToLearn()
+        {
+
         }
 
     }
