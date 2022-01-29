@@ -14,16 +14,20 @@ namespace Fiszki_projekt
         RepetitionsDBImplementation repetitionsDBImplementationObject = new RepetitionsDBImplementation();
         public List<(int,string, string)> phrases;
 
-        private int firstLanguageId =4; // te zmienne powinne byc przypisane przez gui
-        private int secondLanguageId =5;
+        private int firstLanguageId; // te zmienne powinne byc przypisane przez gui
+        private int secondLanguageId;
 
 
-        public Engine(int firstLanguageId, int secondLanguageId)
+        public Engine()
         {
-          phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
+         
             //phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
-            this.firstLanguageId = firstLanguageId;
-            this.secondLanguageId = secondLanguageId;
+
+        }
+
+        public void phrasesLanguages( int firstLanguageId, int secondLanguageId)
+        {
+            phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
         }
 
         public string setCurrentWordinFirstLanguage()
@@ -78,7 +82,7 @@ namespace Fiszki_projekt
             
         }
 
-        public void setLanguagesForLeaning(String firstLanguageName, String secondLanguageName)
+        public void setLanguagesForLeaning(int firstLanguageId, int secondLanguageId)
         {
 
         }

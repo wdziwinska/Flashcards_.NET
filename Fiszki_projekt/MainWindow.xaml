@@ -21,22 +21,22 @@
 
         </Grid>
         <Grid x:Name="firstlanguage" Visibility="Visible">
-            <CheckBox Content="English" HorizontalAlignment="Left" Margin="180,105,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBox_Click"/>
-            <CheckBox Content="Polish" HorizontalAlignment="Left" Margin="180,135,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBox_Click"/>
-            <CheckBox Content="Russian" HorizontalAlignment="Left" Margin="180,165,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBox_Click"/>
-            <CheckBox Content="German" HorizontalAlignment="Left" Margin="180,195,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBox_Click"/>
-            <CheckBox Content="Italian" HorizontalAlignment="Left" Margin="180,225,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBox_Click"/>
-            <CheckBox Content="French" HorizontalAlignment="Left" Margin="180,255,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBox_Click"/>
+            <CheckBox Name="fEnglish" Content="English" HorizontalAlignment="Left" Margin="180,105,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Checked="CheckBoxFirstLanguage_Click"/>
+            <CheckBox Name="fPolish" Content="Polish" HorizontalAlignment="Left" Margin="180,135,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Checked="CheckBoxFirstLanguage_Click"/>
+            <CheckBox Name ="fRussian" Content="Russian" HorizontalAlignment="Left" Margin="180,165,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Checked="CheckBoxFirstLanguage_Click"/>
+            <CheckBox Name ="fGerman" Content="German" HorizontalAlignment="Left" Margin="180,195,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Checked="CheckBoxFirstLanguage_Click"/>
+            <CheckBox Name ="fItalian" Content="Italian" HorizontalAlignment="Left" Margin="180,225,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Checked="CheckBoxFirstLanguage_Click"/>
+            <CheckBox Name ="fFrench" Content="French" HorizontalAlignment="Left" Margin="180,255,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Checked="CheckBoxFirstLanguage_Click"/>
             <Label Content="choose first language:" HorizontalAlignment="Center" Margin="0,57,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20"/>
         </Grid>
         
         <Grid x:Name="secondlanguage" Visibility="Visible">
-            <CheckBox Content="English" HorizontalAlignment="Left" Margin="180,105,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
-            <CheckBox Content="Polish" HorizontalAlignment="Left" Margin="180,135,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
-            <CheckBox Content="Russian" HorizontalAlignment="Left" Margin="180,165,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
-            <CheckBox Content="German" HorizontalAlignment="Left" Margin="180,195,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
-            <CheckBox Content="Italian" HorizontalAlignment="Left" Margin="180,225,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
-            <CheckBox Content="French" HorizontalAlignment="Left" Margin="180,255,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
+            <CheckBox Name="sEnglish" Content="English" HorizontalAlignment="Left" Margin="180,105,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
+            <CheckBox Name="sPolish" Content="Polish" HorizontalAlignment="Left" Margin="180,135,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
+            <CheckBox Name="sRussian" Content="Russian" HorizontalAlignment="Left" Margin="180,165,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
+            <CheckBox Name="sGerman" Content="German" HorizontalAlignment="Left" Margin="180,195,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
+            <CheckBox Name="sItalian" Content="Italian" HorizontalAlignment="Left" Margin="180,225,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
+            <CheckBox Name="sFrench" Content="French" HorizontalAlignment="Left" Margin="180,255,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
             <Label Content="choose second language:" HorizontalAlignment="Center" Margin="0,57,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20"/>
         </Grid>
     </Grid>
