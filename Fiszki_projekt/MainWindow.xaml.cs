@@ -125,15 +125,16 @@ namespace Fiszki_projekt
         }
         private void CheckBoxFirstLanguage_Click(object sender, RoutedEventArgs e)
         {
-            if(nameCheckBox == "fPolish") {fPolish.IsChecked = false;}
-            else if(nameCheckBox == "fEnglish") {fEnglish.IsChecked = false;}
-            else if(nameCheckBox == "fGerman") { fGerman.IsChecked = false;}
-            else if(nameCheckBox == "fRussian") {fRussian.IsChecked = false;}
-            else if(nameCheckBox == "fItalian") {fItalian.IsChecked = false;}
-            else if(nameCheckBox == "fFrench") {fFrench.IsChecked = false;}
+            if(nameCheckBox == "fPolish") {fPolish.IsChecked = false; sPolish.IsHitTestVisible = true; }
+            else if(nameCheckBox == "fEnglish") {fEnglish.IsChecked = false; sEnglish.IsHitTestVisible = true; }
+            else if(nameCheckBox == "fGerman") { fGerman.IsChecked = false; sGerman.IsHitTestVisible = true; }
+            else if(nameCheckBox == "fRussian") {fRussian.IsChecked = false; sRussian.IsHitTestVisible = true; }
+            else if(nameCheckBox == "fItalian") {fItalian.IsChecked = false; sItalian.IsHitTestVisible = true; }
+            else if(nameCheckBox == "fFrench") {fFrench.IsChecked = false; sFrench.IsHitTestVisible = true; }
 
             if ((bool)fPolish.IsChecked)
             {
+                sPolish.IsHitTestVisible = false;
                 fEnglish.IsChecked = false;
                 fGerman.IsChecked = false;
                 fRussian.IsChecked = false;
@@ -144,6 +145,7 @@ namespace Fiszki_projekt
 
             else if ((bool)fEnglish.IsChecked)
             {
+                sEnglish.IsHitTestVisible = false;
                 fPolish.IsChecked = false;
                 fGerman.IsChecked = false;
                 fRussian.IsChecked = false;
@@ -153,6 +155,7 @@ namespace Fiszki_projekt
             }
             else if ((bool)fGerman.IsChecked)
             {
+                sGerman.IsHitTestVisible = false;
                 fPolish.IsChecked = false;
                 fEnglish.IsChecked = false;
                 fRussian.IsChecked = false;
@@ -162,6 +165,7 @@ namespace Fiszki_projekt
             }
             else if ((bool)fRussian.IsChecked)
             {
+                sRussian.IsHitTestVisible = false;
                 fPolish.IsChecked = false;
                 fEnglish.IsChecked = false;
                 fGerman.IsChecked = false;
@@ -172,6 +176,7 @@ namespace Fiszki_projekt
 
             else if ((bool)fItalian.IsChecked)
             {
+                sItalian.IsHitTestVisible = false;
                 fPolish.IsChecked = false;
                 fEnglish.IsChecked = false;
                 fGerman.IsChecked = false;
@@ -182,6 +187,7 @@ namespace Fiszki_projekt
 
             else if ((bool)fFrench.IsChecked)
             {
+                sFrench.IsHitTestVisible = false;
                 fPolish.IsChecked = false; 
                 fEnglish.IsChecked = false;
                 fGerman.IsChecked = false;
@@ -193,15 +199,16 @@ namespace Fiszki_projekt
 
         private void CheckBoxSecondLanguage_Click(object sender, RoutedEventArgs e)
         {
-            if (nameCheckBoxSecondLanguage == "sPolish") { sPolish.IsChecked = false; }
-            else if (nameCheckBoxSecondLanguage == "sEnglish") { sEnglish.IsChecked = false; }
-            else if (nameCheckBoxSecondLanguage == "sGerman") { sGerman.IsChecked = false; }
-            else if (nameCheckBoxSecondLanguage == "sRussian") { sRussian.IsChecked = false; }
-            else if (nameCheckBoxSecondLanguage == "sItalian") { sItalian.IsChecked = false; }
-            else if (nameCheckBoxSecondLanguage == "sFrench") { sFrench.IsChecked = false; }
+            if (nameCheckBoxSecondLanguage == "sPolish") { sPolish.IsChecked = false; fPolish.IsHitTestVisible = true; }
+            else if (nameCheckBoxSecondLanguage == "sEnglish") { sEnglish.IsChecked = false; fEnglish.IsHitTestVisible = true; }
+            else if (nameCheckBoxSecondLanguage == "sGerman") { sGerman.IsChecked = false; fGerman.IsHitTestVisible = true; }
+            else if (nameCheckBoxSecondLanguage == "sRussian") { sRussian.IsChecked = false; fRussian.IsHitTestVisible = true; }
+            else if (nameCheckBoxSecondLanguage == "sItalian") { sItalian.IsChecked = false; fItalian.IsHitTestVisible = true; }
+            else if (nameCheckBoxSecondLanguage == "sFrench") { sFrench.IsChecked = false; fFrench.IsHitTestVisible = true; }
 
             if ((bool)sPolish.IsChecked)
             {
+                fPolish.IsHitTestVisible = false;
                 sEnglish.IsChecked = false;
                 sGerman.IsChecked = false;
                 sRussian.IsChecked = false;
@@ -212,6 +219,7 @@ namespace Fiszki_projekt
 
             else if ((bool)sEnglish.IsChecked)
             {
+                fEnglish.IsHitTestVisible = false;
                 sPolish.IsChecked = false;
                 sGerman.IsChecked = false;
                 sRussian.IsChecked = false;
@@ -221,6 +229,7 @@ namespace Fiszki_projekt
             }
             else if ((bool)sGerman.IsChecked)
             {
+                fGerman.IsHitTestVisible = false;
                 sPolish.IsChecked = false;
                 sEnglish.IsChecked = false;
                 sRussian.IsChecked = false;
@@ -230,6 +239,7 @@ namespace Fiszki_projekt
             }
             else if ((bool)sRussian.IsChecked)
             {
+                fRussian.IsHitTestVisible = false;
                 sPolish.IsChecked = false;
                 sEnglish.IsChecked = false;
                 sGerman.IsChecked = false;
@@ -240,6 +250,7 @@ namespace Fiszki_projekt
 
             else if ((bool)sItalian.IsChecked)
             {
+                fItalian.IsHitTestVisible = false;
                 sPolish.IsChecked = false;
                 sEnglish.IsChecked = false;
                 sGerman.IsChecked = false;
@@ -250,6 +261,7 @@ namespace Fiszki_projekt
 
             else if ((bool)sFrench.IsChecked)
             {
+                fFrench.IsHitTestVisible = false;
                 sPolish.IsChecked = false;
                 sEnglish.IsChecked = false;
                 sGerman.IsChecked = false;
