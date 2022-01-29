@@ -35,6 +35,8 @@ namespace Fiszki_projekt
         Engine engine = new Engine();
         public int clickFirstLangugeCount = 1;
         public int clickSecondLangugeCount = 1;
+        String nameCheckBox;
+        String nameCheckBoxSecondLanguage;
 
         //Console.WriteLine("firstLanguageId", firstLanguageId);
 
@@ -123,144 +125,140 @@ namespace Fiszki_projekt
         }
         private void CheckBoxFirstLanguage_Click(object sender, RoutedEventArgs e)
         {
+            if(nameCheckBox == "fPolish") {fPolish.IsChecked = false;}
+            else if(nameCheckBox == "fEnglish") {fEnglish.IsChecked = false;}
+            else if(nameCheckBox == "fGerman") { fGerman.IsChecked = false;}
+            else if(nameCheckBox == "fRussian") {fRussian.IsChecked = false;}
+            else if(nameCheckBox == "fItalian") {fItalian.IsChecked = false;}
+            else if(nameCheckBox == "fFrench") {fFrench.IsChecked = false;}
+
             if ((bool)fPolish.IsChecked)
             {
-                fEnglish.IsHitTestVisible = false;
-                fGerman.IsHitTestVisible = false;
-                fRussian.IsHitTestVisible = false;
-                fItalian.IsHitTestVisible = false;
-                fFrench.IsHitTestVisible = false;
-                clickFirstLangugeCount++;
+                fEnglish.IsChecked = false;
+                fGerman.IsChecked = false;
+                fRussian.IsChecked = false;
+                fItalian.IsChecked = false;
+                fFrench.IsChecked = false;
+                nameCheckBox = "fPolish";
             }
 
             else if ((bool)fEnglish.IsChecked)
             {
-
-                fPolish.IsHitTestVisible = false;
-                fGerman.IsHitTestVisible = false;
-                fRussian.IsHitTestVisible = false;
-                fItalian.IsHitTestVisible = false;
-                fFrench.IsHitTestVisible = false;
-                clickFirstLangugeCount++;
+                fPolish.IsChecked = false;
+                fGerman.IsChecked = false;
+                fRussian.IsChecked = false;
+                fItalian.IsChecked = false;
+                fFrench.IsChecked = false;
+                nameCheckBox = "fEnglish";
             }
             else if ((bool)fGerman.IsChecked)
             {
-                fPolish.IsHitTestVisible = false;
-                fEnglish.IsHitTestVisible = false;
-                fRussian.IsHitTestVisible = false;
-                fItalian.IsHitTestVisible = false;
-                fFrench.IsHitTestVisible = false;
-                clickFirstLangugeCount++;
+                fPolish.IsChecked = false;
+                fEnglish.IsChecked = false;
+                fRussian.IsChecked = false;
+                fItalian.IsChecked = false;
+                fFrench.IsChecked = false;
+                nameCheckBox = "fGerman";
             }
             else if ((bool)fRussian.IsChecked)
             {
-                fPolish.IsHitTestVisible = false;
-                fEnglish.IsHitTestVisible = false;
-                fGerman.IsHitTestVisible = false;
-                fItalian.IsHitTestVisible = false;
-                fFrench.IsHitTestVisible = false;
-                clickFirstLangugeCount++;
+                fPolish.IsChecked = false;
+                fEnglish.IsChecked = false;
+                fGerman.IsChecked = false;
+                fItalian.IsChecked = false;
+                fFrench.IsChecked = false;
+                nameCheckBox = "fRussian";
             }
 
             else if ((bool)fItalian.IsChecked)
             {
-                fPolish.IsHitTestVisible = false;
-                fEnglish.IsHitTestVisible = false;
-                fGerman.IsHitTestVisible = false;
-                fRussian.IsHitTestVisible = false;
-                fFrench.IsHitTestVisible = false;
-                clickFirstLangugeCount++;
+                fPolish.IsChecked = false;
+                fEnglish.IsChecked = false;
+                fGerman.IsChecked = false;
+                fRussian.IsChecked = false;
+                fFrench.IsChecked = false;
+                nameCheckBox = "fItalian";
             }
 
             else if ((bool)fFrench.IsChecked)
             {
-                fPolish.IsHitTestVisible = false; //zablokowany
-                fEnglish.IsHitTestVisible = false;
-                fGerman.IsHitTestVisible = false;
-                fRussian.IsHitTestVisible = false;
-                fItalian.IsHitTestVisible = false;
-                clickFirstLangugeCount++;
-            }
-            else if (clickFirstLangugeCount % 2 == 0)
-            {
-                fPolish.IsHitTestVisible = true;
-                fEnglish.IsHitTestVisible = true;
-                fGerman.IsHitTestVisible = true;
-                fRussian.IsHitTestVisible = true;
-                fItalian.IsHitTestVisible = true;
-                fFrench.IsHitTestVisible = true;
-                clickFirstLangugeCount++;
+                fPolish.IsChecked = false; 
+                fEnglish.IsChecked = false;
+                fGerman.IsChecked = false;
+                fRussian.IsChecked = false;
+                fItalian.IsChecked = false;
+                nameCheckBox = "fFrench";
             }
         }
 
         private void CheckBoxSecondLanguage_Click(object sender, RoutedEventArgs e)
         {
+            if (nameCheckBoxSecondLanguage == "sPolish") { sPolish.IsChecked = false; }
+            else if (nameCheckBoxSecondLanguage == "sEnglish") { sEnglish.IsChecked = false; }
+            else if (nameCheckBoxSecondLanguage == "sGerman") { sGerman.IsChecked = false; }
+            else if (nameCheckBoxSecondLanguage == "sRussian") { sRussian.IsChecked = false; }
+            else if (nameCheckBoxSecondLanguage == "sItalian") { sItalian.IsChecked = false; }
+            else if (nameCheckBoxSecondLanguage == "sFrench") { sFrench.IsChecked = false; }
+
             if ((bool)sPolish.IsChecked)
             {
-                sEnglish.IsHitTestVisible = false;
-                sGerman.IsHitTestVisible = false;
-                sRussian.IsHitTestVisible = false;
-                sItalian.IsHitTestVisible = false;
-                sFrench.IsHitTestVisible = false;
-                clickSecondLangugeCount++;
+                sEnglish.IsChecked = false;
+                sGerman.IsChecked = false;
+                sRussian.IsChecked = false;
+                sItalian.IsChecked = false;
+                sFrench.IsChecked = false;
+                nameCheckBoxSecondLanguage = "sPolish";
             }
+
             else if ((bool)sEnglish.IsChecked)
             {
-                sPolish.IsHitTestVisible = false;
-                sGerman.IsHitTestVisible = false;
-                sRussian.IsHitTestVisible = false;
-                sItalian.IsHitTestVisible = false;
-                sFrench.IsHitTestVisible = false;
-                clickSecondLangugeCount++;
+                sPolish.IsChecked = false;
+                sGerman.IsChecked = false;
+                sRussian.IsChecked = false;
+                sItalian.IsChecked = false;
+                sFrench.IsChecked = false;
+                nameCheckBoxSecondLanguage = "sEnglish";
             }
             else if ((bool)sGerman.IsChecked)
             {
-                sPolish.IsHitTestVisible = false;
-                sEnglish.IsHitTestVisible = false;
-                sRussian.IsHitTestVisible = false;
-                sItalian.IsHitTestVisible = false;
-                sFrench.IsHitTestVisible = false;
-                clickSecondLangugeCount++;
+                sPolish.IsChecked = false;
+                sEnglish.IsChecked = false;
+                sRussian.IsChecked = false;
+                sItalian.IsChecked = false;
+                sFrench.IsChecked = false;
+                nameCheckBoxSecondLanguage = "sGerman";
             }
             else if ((bool)sRussian.IsChecked)
             {
-                sPolish.IsHitTestVisible = false;
-                sEnglish.IsHitTestVisible = false;
-                sGerman.IsHitTestVisible = false;
-                sItalian.IsHitTestVisible = false;
-                sFrench.IsHitTestVisible = false;
-                clickSecondLangugeCount++;
+                sPolish.IsChecked = false;
+                sEnglish.IsChecked = false;
+                sGerman.IsChecked = false;
+                sItalian.IsChecked = false;
+                sFrench.IsChecked = false;
+                nameCheckBoxSecondLanguage = "sRussian";
             }
 
             else if ((bool)sItalian.IsChecked)
             {
-                sPolish.IsHitTestVisible = false;
-                sEnglish.IsHitTestVisible = false;
-                sGerman.IsHitTestVisible = false;
-                sRussian.IsHitTestVisible = false;
-                sFrench.IsHitTestVisible = false;
-                clickSecondLangugeCount++;
+                sPolish.IsChecked = false;
+                sEnglish.IsChecked = false;
+                sGerman.IsChecked = false;
+                sRussian.IsChecked = false;
+                sFrench.IsChecked = false;
+                nameCheckBoxSecondLanguage = "sItalian";
             }
+
             else if ((bool)sFrench.IsChecked)
             {
-                sPolish.IsHitTestVisible = false;
-                sEnglish.IsHitTestVisible = false;
-                sGerman.IsHitTestVisible = false;
-                sRussian.IsHitTestVisible = false;
-                sItalian.IsHitTestVisible = false;
-                clickSecondLangugeCount++;
-            }
-            else if (clickSecondLangugeCount % 2 == 0)
-            {
-                sPolish.IsHitTestVisible = true;
-                sEnglish.IsHitTestVisible = true;
-                sGerman.IsHitTestVisible = true;
-                sRussian.IsHitTestVisible = true;
-                sItalian.IsHitTestVisible = true;
-                sFrench.IsHitTestVisible = true;
-                clickSecondLangugeCount++;
+                sPolish.IsChecked = false;
+                sEnglish.IsChecked = false;
+                sGerman.IsChecked = false;
+                sRussian.IsChecked = false;
+                sItalian.IsChecked = false;
+                nameCheckBoxSecondLanguage = "sFrench";
             }
         }
+    
 
         private void pokaz_tlumaczenie_Click(object sender, RoutedEventArgs e)
         {
