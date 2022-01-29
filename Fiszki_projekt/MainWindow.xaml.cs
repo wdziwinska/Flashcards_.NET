@@ -41,18 +41,17 @@ namespace Fiszki_projekt
         {
             InitializeComponent();
             test.Visibility = Visibility.Collapsed;
-            firstlanguage.Visibility = Visibility.Collapsed;
-            secondlanguage.Visibility = Visibility.Collapsed;
+            languages.Visibility = Visibility.Collapsed;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-        private void CheckBoxFirstLanguage_Click(object sender, RoutedEventArgs e)
+        private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            firstlanguage.Visibility = Visibility.Collapsed;
-            secondlanguage.Visibility = Visibility.Visible;
+            languages.Visibility = Visibility.Collapsed;
+            test.Visibility = Visibility.Visible;
 
             if ((bool)fPolish.IsChecked)
             {
@@ -84,13 +83,6 @@ namespace Fiszki_projekt
                 firstLanguageId = 6;
             }
 
-        }
-
-        private void CheckBoxSecondLanguage_Click(object sender, RoutedEventArgs e)
-        {
-            secondlanguage.Visibility = Visibility.Collapsed;
-            test.Visibility = Visibility.Visible;
-
             if ((bool)sPolish.IsChecked)
             {
                 secondLanguageId = 1;
@@ -120,10 +112,11 @@ namespace Fiszki_projekt
             {
                 secondLanguageId = 6;
             }
-            engine.phrasesLanguages(firstLanguageId, secondLanguageId);
+            engine.setLanguagesForLeaning(firstLanguageId, secondLanguageId);
             Phrase.Text = engine.setCurrentWordinFirstLanguage();
 
         }
+
 
         private void pokaz_tlumaczenie_Click(object sender, RoutedEventArgs e)
         {
@@ -169,7 +162,7 @@ namespace Fiszki_projekt
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             menu.Visibility=Visibility.Collapsed;
-            firstlanguage.Visibility = Visibility.Visible;
+            languages.Visibility = Visibility.Visible;
 
             fPolish.IsChecked = false;
             fEnglish.IsChecked = false;
@@ -192,11 +185,16 @@ namespace Fiszki_projekt
             menu.Visibility = Visibility.Visible;
         }
 
-/*        private void Submit_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            firstlanguage.Visibility = Visibility.Collapsed;
-            test.Visibility = Visibility.Visible;
-        }*/
+
+        }
+
+        /*        private void Submit_Click(object sender, RoutedEventArgs e)
+                {
+                    firstlanguage.Visibility = Visibility.Collapsed;
+                    test.Visibility = Visibility.Visible;
+                }*/
 
     }
 }

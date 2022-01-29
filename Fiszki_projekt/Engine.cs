@@ -25,11 +25,6 @@ namespace Fiszki_projekt
 
         }
 
-        public void phrasesLanguages( int firstLanguageId, int secondLanguageId)
-        {
-            phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
-        }
-
         public string setCurrentWordinFirstLanguage()
         {
             if (phrases.Count > 0)
@@ -84,7 +79,7 @@ namespace Fiszki_projekt
 
         public void setLanguagesForLeaning(int firstLanguageId, int secondLanguageId)
         {
-
+            phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
         }
 
         public void setNumberOfWordsToLearn()
