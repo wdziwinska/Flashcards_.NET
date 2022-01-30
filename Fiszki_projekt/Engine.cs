@@ -82,5 +82,9 @@ namespace Fiszki_projekt
             phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
         }
 
+        public void removeKnownWordsFromPhrases()
+        {
+            phrases.RemoveAll(i => knownWordsDBImplementationObject.isWordKnown(i.Item1, firstLanguageId, secondLanguageId));
+        }
     }
 }
