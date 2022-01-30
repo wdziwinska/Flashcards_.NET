@@ -8,7 +8,7 @@ namespace Fiszki_projekt
     {
         //public List<Tuple<int,string, string>> getWord(int phraseId, int firstLanguageId, int secondLangueId);
 
-        public List<(int,string,string)> getWord(int phraseId, int firstLanguageId, int secondLangueId);
+        public List<(int,string,string)> getWord(int phraseId, int firstLanguageId, int secondLangueId, int numberOfWordsToLearn);
         public int getRecordsCount();
     }
 }

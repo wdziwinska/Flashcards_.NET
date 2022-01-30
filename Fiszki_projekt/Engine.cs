@@ -77,9 +77,9 @@ namespace Fiszki_projekt
             
         }
 
-        public void setLanguagesForLeaning(int firstLanguageId, int secondLanguageId)
+        public void setLanguagesForLeaning(int firstLanguageId, int secondLanguageId, int numberOfWordsToLearn)
         {
-            phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId);
+            phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId, numberOfWordsToLearn);
         }
 
         public void setNumberOfWordsToLearn()
