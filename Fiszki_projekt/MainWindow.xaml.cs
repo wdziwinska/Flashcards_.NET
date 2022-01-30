@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace Fiszki_projekt
 {
@@ -33,13 +34,8 @@ namespace Fiszki_projekt
         private static int firstLanguageId;
         private static int secondLanguageId;
         Engine engine = new Engine();
-        public int clickFirstLangugeCount = 1;
-        public int clickSecondLangugeCount = 1;
         String nameCheckBox;
         String nameCheckBoxSecondLanguage;
-
-        //Console.WriteLine("firstLanguageId", firstLanguageId);
-
 
         public MainWindow()
         {
@@ -57,71 +53,25 @@ namespace Fiszki_projekt
             languages.Visibility = Visibility.Collapsed;
             test.Visibility = Visibility.Visible;
 
-            if ((bool)fPolish.IsChecked)
-            {
-                firstLanguageId = 1;
-                fPolish.IsHitTestVisible = false;
-            }
+            if ((bool)fPolish.IsChecked) { firstLanguageId = 1; }
+            else if ((bool)fEnglish.IsChecked) { firstLanguageId = 2; }
+            else if ((bool)fGerman.IsChecked) { firstLanguageId = 3; }
+            else if ((bool)fRussian.IsChecked) { firstLanguageId = 4; }
+            else if ((bool)fItalian.IsChecked) { firstLanguageId = 5; }
+            else if ((bool)fFrench.IsChecked) { firstLanguageId = 6; }
+            if ((bool)sPolish.IsChecked) { secondLanguageId = 1; }
+            else if ((bool)sEnglish.IsChecked) { secondLanguageId = 2; }
+            else if ((bool)sGerman.IsChecked) { secondLanguageId = 3; }
+            else if ((bool)sRussian.IsChecked) { secondLanguageId = 4; }
+            else if ((bool)sItalian.IsChecked) { secondLanguageId = 5; } 
+            else if ((bool)sFrench.IsChecked) { secondLanguageId = 6; }
 
-            else if ((bool)fEnglish.IsChecked)
-            {
-                firstLanguageId = 2;
-                fEnglish.IsHitTestVisible = false;
-            }
+            ComboBoxItem typeItem = (ComboBoxItem)comboBox.SelectedItem;
+            string value = typeItem.Content.ToString();
+            Debug.WriteLine("value: ", value);
 
-            else if ((bool)fGerman.IsChecked)
-            {
-                firstLanguageId = 3;
-                fGerman.IsHitTestVisible = false;
-            }
-
-            if ((bool)fRussian.IsChecked)
-            {
-                firstLanguageId = 4;
-            }
-
-            else if ((bool)fItalian.IsChecked)
-            {
-                firstLanguageId = 5;
-            }
-
-            else if ((bool)fFrench.IsChecked)
-            {
-                firstLanguageId = 6;
-            }
-
-            if ((bool)sPolish.IsChecked)
-            {
-                secondLanguageId = 1;
-            }
-
-            else if ((bool)sEnglish.IsChecked)
-            {
-                secondLanguageId = 2;
-            }
-
-            else if ((bool)sGerman.IsChecked)
-            {
-                secondLanguageId = 3;
-            }
-
-            if ((bool)sRussian.IsChecked)
-            {
-                secondLanguageId = 4;
-            }
-
-            else if ((bool)sItalian.IsChecked)
-            {
-                secondLanguageId = 5;
-            }
-
-            else if ((bool)sFrench.IsChecked)
-            {
-                secondLanguageId = 6;
-            }
             engine.setLanguagesForLeaning(firstLanguageId, secondLanguageId);
             Phrase.Text = engine.setCurrentWordinFirstLanguage();
-
         }
         private void CheckBoxFirstLanguage_Click(object sender, RoutedEventArgs e)
         {
