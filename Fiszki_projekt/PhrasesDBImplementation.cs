@@ -23,8 +23,8 @@ namespace Fiszki_projekt
                 reader.ReadLine();
                 int licznik = 0;
                 var retList = new List<(int,string,string)>();
-                while (!reader.EndOfStream && licznik<numberOfWordsToLearn)
-                //while (!reader.EndOfStream)
+               // while (!reader.EndOfStream && licznik<numberOfWordsToLearn)
+                while (!reader.EndOfStream)
                 {
                     var lines = reader.ReadLine();
                     var values = lines.Split(";");

@@ -81,9 +81,15 @@ namespace Fiszki_projekt
             System.Diagnostics.Debug.WriteLine(phrases);
         }
 
-        public void removeKnownWordsFromPhrases()
-        {
+        public void removeKnownWordsFromPhrases(int numberOfWordsToLearn)
+        {   
             phrases.RemoveAll(i => knownWordsDBImplementationObject.isWordKnown(i.Item1, firstLanguageId, secondLanguageId));
+            int i =phrases.Count-1;
+            while (phrases.Count > numberOfWordsToLearn)
+            {
+                phrases.RemoveAt(i);
+                i--;
+            }
         }
     }
 }
