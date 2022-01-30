@@ -36,6 +36,7 @@ namespace Fiszki_projekt
         Engine engine = new Engine();
         String nameCheckBox;
         String nameCheckBoxSecondLanguage;
+        String nameCheckBoxWayToLearn;
 
         public MainWindow()
         {
@@ -221,7 +222,24 @@ namespace Fiszki_projekt
                 nameCheckBoxSecondLanguage = "sFrench";
             }
         }
-    
+
+        private void CheckBoxWayToLearn_Click(object sender, RoutedEventArgs e)
+        {
+            if (nameCheckBoxWayToLearn == "repetitions") { repetitions.IsChecked = false; }
+            else if (nameCheckBoxWayToLearn == "newPhrases") { newPhrases.IsChecked = false; }
+
+            if ((bool)repetitions.IsChecked)
+            {
+                newPhrases.IsChecked = false;
+                nameCheckBoxWayToLearn = "repetitions";
+            }
+            else if((bool)newPhrases.IsChecked)
+            {
+                repetitions.IsChecked = false;
+                nameCheckBoxWayToLearn = "newPhrases";
+            }
+        }
+
 
         private void pokaz_tlumaczenie_Click(object sender, RoutedEventArgs e)
         {
