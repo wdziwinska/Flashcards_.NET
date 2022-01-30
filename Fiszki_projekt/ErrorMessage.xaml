@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ErrorMessage" Height="200" Width="400" Background="#FF2E3349" ResizeMode="NoResize">
     <Grid Margin="0,10,0,0">
-        <Label Content="You don't have any words &#xa;          to repetition" FontSize="25" Background="#FF2E3349" Foreground="#FF86C3FF" FontFamily="Nirmala UI" Margin="53,5,53,73" />
+        <Label Content="You don't have any words &#xa;         for repetition" FontSize="25" Background="#FF2E3349" Foreground="#FF86C3FF" FontFamily="Nirmala UI" Margin="53,5,53,73" />
         <Button x:Name="ok" Content="Ok" Click="Ok_Click" VerticalAlignment="Top" Height="43" Width="130" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" FontSize="16" Margin="0,106,0,0" />
     </Grid>
 </Window>
