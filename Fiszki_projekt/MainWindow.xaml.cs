@@ -49,6 +49,7 @@ namespace Fiszki_projekt
         {
 
         }
+
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             languages.Visibility = Visibility.Collapsed;
@@ -79,6 +80,16 @@ namespace Fiszki_projekt
             if ((bool)repetitions.IsChecked)
             {
                 engine.wordsForRepetitions(firstLanguageId, secondLanguageId, numberOfWordtolearn);
+
+                String ret = engine.setCurrentWordinFirstLanguage();
+
+                if (ret == "//Congratulation!//")
+                {
+                    ErrorMessage errorMessage = new ErrorMessage();
+                    errorMessage.Show();
+                    test.Visibility = Visibility.Collapsed;
+                    languages.Visibility = Visibility.Visible;
+                }
             }
             else if ((bool)newPhrases.IsChecked)
             {
@@ -161,7 +172,7 @@ namespace Fiszki_projekt
                 nameCheckBox = "fFrench";
             }
             if (comboBox.IsLoaded && ((bool)fPolish.IsChecked || (bool)fEnglish.IsChecked || (bool)fGerman.IsChecked || (bool)fRussian.IsChecked
-                || (bool)fItalian.IsChecked || (bool)fFrench.IsChecked) && ((bool)sPolish.IsChecked || (bool)sEnglish.IsChecked || (bool)sGerman.IsChecked
+                || (bool)fItalian.IsChecked || (bool)fFrench.IsChecked) && ((bool)sPolish.IsChecked || ( bool)sEnglish.IsChecked || (bool)sGerman.IsChecked
                 || (bool)sRussian.IsChecked || (bool)sItalian.IsChecked || (bool)sFrench.IsChecked))
             {
                 Submit.IsHitTestVisible = true;
@@ -316,31 +327,13 @@ namespace Fiszki_projekt
         {
             menu.Visibility=Visibility.Collapsed;
             languages.Visibility = Visibility.Visible;
-
-            /*            fPolish.IsChecked = false;
-                        fEnglish.IsChecked = false;
-                        fGerman.IsChecked = false;
-                        fRussian.IsChecked = false;
-                        fItalian.IsChecked = false;
-                        fFrench.IsChecked = false;
-                        sPolish.IsChecked = false;
-                        sEnglish.IsChecked = false;
-                        sGerman.IsChecked = false;
-                        sRussian.IsChecked = false;
-                        sItalian.IsChecked = false;
-                        sFrench.IsChecked = false;*/
         }
 
 
         private void Wroc_Click(object sender, RoutedEventArgs e)
         {
             test.Visibility = Visibility.Collapsed;
-            menu.Visibility = Visibility.Visible;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
+            languages.Visibility = Visibility.Visible;
         }
     }
 }

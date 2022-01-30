@@ -41,7 +41,6 @@ namespace Fiszki_projekt
 
         public string getCurrentWordInSecondLanguage()
         {
-
             if (phrases.Count > 0)
             {
                 return phrases.ElementAt(0).Item3;
