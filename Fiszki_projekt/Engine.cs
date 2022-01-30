@@ -67,9 +67,7 @@ namespace Fiszki_projekt
                 {
                     repetitionsDBImplementationObject.storeUnknownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage());
                 }
-            }
-            
-            
+            } 
         }
 
         public void setLanguagesForLeaning(int firstLanguageId, int secondLanguageId, int numberOfWordsToLearn)
@@ -79,7 +77,8 @@ namespace Fiszki_projekt
 
         public void wordsForRepetitions(int firstLanguageId, int secondLanguageId, int numberOfWordsToLearn)
         {
-            phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
+            phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId, numberOfWordsToLearn);
+            System.Diagnostics.Debug.WriteLine(phrases);
         }
 
     }

@@ -10,16 +10,16 @@ namespace Fiszki_projekt
     {
        
 
-        public List<(int, string, string)> getWordsForRepetition(int firstLanguageId, int secondLanguageId)
+        public List<(int, string, string)> getWordsForRepetition(int firstLanguageId, int secondLanguageId, int numberOfWordsToLearn)
         {
             (int, string, string) tuple = (0, "", "");
             using (var reader = new StreamReader(@"wordsForRepetition.csv"))
             {
               //  reader.ReadLine();
-                //int licznik = 0;
+                int licznik = 0;
                 var retList = new List<(int, string, string)>();
-                //while (!reader.EndOfStream && licznik<10)
-                while (!reader.EndOfStream)
+                while (!reader.EndOfStream && licznik< numberOfWordsToLearn)
+                //while (!reader.EndOfStream)
                 {
                     var lines = reader.ReadLine();
                     var values = lines.Split(";");
@@ -29,7 +29,7 @@ namespace Fiszki_projekt
                         tuple = (Int32.Parse(values[0]), values[firstLanguageId], values[secondLanguageId]);
                         retList.Add(tuple);
                     }
-                    //licznik++; 
+                    licznik++; 
                 }
                 reader.Close();
                 return retList;
