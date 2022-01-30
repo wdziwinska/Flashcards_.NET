@@ -28,7 +28,7 @@ namespace Fiszki_projekt
                 {
                     var lines = reader.ReadLine();
                     var values = lines.Split(";");
-                    System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLanguageId]);
+                  //  System.Diagnostics.Debug.WriteLine("Slowo: " + values[firstLanguageId] + ", tlumaczenie: " + values[secondLanguageId]);
                     (int,string,string) tuple = (Int32.Parse(values[0]), values[firstLanguageId], values[secondLanguageId]);
                     retList.Add(tuple);
                     licznik++; 

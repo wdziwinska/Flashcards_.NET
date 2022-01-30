@@ -84,7 +84,9 @@ namespace Fiszki_projekt
             {
                 engine.setLanguagesForLeaning(firstLanguageId, secondLanguageId, numberOfWordtolearn);
             }
+            engine.removeKnownWordsFromPhrases();
             Phrase.Text = engine.setCurrentWordinFirstLanguage();
+            
         }
         private void CheckBoxFirstLanguage_Click(object sender, RoutedEventArgs e)
         {
