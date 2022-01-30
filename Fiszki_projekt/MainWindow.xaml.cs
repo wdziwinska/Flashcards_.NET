@@ -68,10 +68,10 @@ namespace Fiszki_projekt
 
             ComboBoxItem typeItem = (ComboBoxItem)comboBox.SelectedItem;
             string value = typeItem.Content.ToString();
-            int nrOfWord = Convert.ToInt32(value);
+            int numberOfWordtolearn = Convert.ToInt32(value);
             Debug.WriteLine("value: ", value);
 
-            engine.setLanguagesForLeaning(firstLanguageId, secondLanguageId, nrOfWord);
+            engine.setLanguagesForLeaning(firstLanguageId, secondLanguageId, numberOfWordtolearn);
             Phrase.Text = engine.setCurrentWordinFirstLanguage();
         }
         private void CheckBoxFirstLanguage_Click(object sender, RoutedEventArgs e)

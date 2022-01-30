@@ -36,8 +36,8 @@
             <CheckBox Name="sFrench" Content="French" HorizontalAlignment="Left" Margin="282,243,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20" Click="CheckBoxSecondLanguage_Click"/>
             <Label Content="choose second &#xa;     language" HorizontalAlignment="Right" Margin="0,16,61,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20"/>
             <Button Name="Submit" Content="Submit" Margin="183,405,183,0" VerticalAlignment="Top" Click="Submit_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="43" FontSize="16" />
-            <Label Content="set the number of &#xa;phrases to learn" HorizontalAlignment="Left" Margin="77,304,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="18"/>
-            <ComboBox Name="comboBox" Text="10" IsEditable="true" Margin="245,328,115,114" FontFamily="Nirmala UI" Foreground = "#FF2B303C" BorderBrush="#FF2B303C" FontStretch="Normal" AutomationProperties.ItemType="int" AutomationProperties.IsRowHeader="True">
+            <Label Content="set the number of &#xa;phrases to learn" HorizontalAlignment="Left" Margin="119,304,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="18"/>
+            <ComboBox Name="comboBox" IsEditable="true" Margin="287,328,123,114" FontFamily="Nirmala UI" Foreground = "#FF2B303C" BorderBrush="#FF2B303C" FontStretch="Normal" AutomationProperties.ItemType="int" AutomationProperties.IsRowHeader="True">
                 <ComboBoxItem Content="5"></ComboBoxItem>
                 <ComboBoxItem Content="10"></ComboBoxItem>
                 <ComboBoxItem Content="15"></ComboBoxItem>
