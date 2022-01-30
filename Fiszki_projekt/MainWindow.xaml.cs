@@ -160,6 +160,12 @@ namespace Fiszki_projekt
                 fItalian.IsChecked = false;
                 nameCheckBox = "fFrench";
             }
+            if (comboBox.IsLoaded && ((bool)fPolish.IsChecked || (bool)fEnglish.IsChecked || (bool)fGerman.IsChecked || (bool)fRussian.IsChecked
+                || (bool)fItalian.IsChecked || (bool)fFrench.IsChecked) && ((bool)sPolish.IsChecked || (bool)sEnglish.IsChecked || (bool)sGerman.IsChecked
+                || (bool)sRussian.IsChecked || (bool)sItalian.IsChecked || (bool)sFrench.IsChecked))
+            {
+                Submit.IsHitTestVisible = true;
+            }
         }
 
         private void CheckBoxSecondLanguage_Click(object sender, RoutedEventArgs e)
@@ -234,6 +240,12 @@ namespace Fiszki_projekt
                 sItalian.IsChecked = false;
                 nameCheckBoxSecondLanguage = "sFrench";
             }
+            if (comboBox.IsLoaded && ((bool)fPolish.IsChecked || (bool)fEnglish.IsChecked || (bool)fGerman.IsChecked || (bool)fRussian.IsChecked
+                || (bool)fItalian.IsChecked || (bool)fFrench.IsChecked) && ((bool)sPolish.IsChecked || (bool)sEnglish.IsChecked || (bool)sGerman.IsChecked
+                || (bool)sRussian.IsChecked || (bool)sItalian.IsChecked || (bool)sFrench.IsChecked))
+            {
+                Submit.IsHitTestVisible = true;
+            }
         }
 
         private void CheckBoxWayToLearn_Click(object sender, RoutedEventArgs e)
@@ -250,6 +262,12 @@ namespace Fiszki_projekt
             {
                 repetitions.IsChecked = false;
                 nameCheckBoxWayToLearn = "newPhrases";
+            }
+            if (comboBox.IsLoaded && ((bool)fPolish.IsChecked || (bool)fEnglish.IsChecked || (bool)fGerman.IsChecked || (bool)fRussian.IsChecked
+                || (bool)fItalian.IsChecked || (bool)fFrench.IsChecked) && ((bool)sPolish.IsChecked || (bool)sEnglish.IsChecked || (bool)sGerman.IsChecked 
+                || (bool)sRussian.IsChecked || (bool)sItalian.IsChecked || (bool)sFrench.IsChecked))
+            {
+                Submit.IsHitTestVisible = true;
             }
         }
 
@@ -299,18 +317,18 @@ namespace Fiszki_projekt
             menu.Visibility=Visibility.Collapsed;
             languages.Visibility = Visibility.Visible;
 
-/*            fPolish.IsChecked = false;
-            fEnglish.IsChecked = false;
-            fGerman.IsChecked = false;
-            fRussian.IsChecked = false;
-            fItalian.IsChecked = false;
-            fFrench.IsChecked = false;
-            sPolish.IsChecked = false;
-            sEnglish.IsChecked = false;
-            sGerman.IsChecked = false;
-            sRussian.IsChecked = false;
-            sItalian.IsChecked = false;
-            sFrench.IsChecked = false;*/
+            /*            fPolish.IsChecked = false;
+                        fEnglish.IsChecked = false;
+                        fGerman.IsChecked = false;
+                        fRussian.IsChecked = false;
+                        fItalian.IsChecked = false;
+                        fFrench.IsChecked = false;
+                        sPolish.IsChecked = false;
+                        sEnglish.IsChecked = false;
+                        sGerman.IsChecked = false;
+                        sRussian.IsChecked = false;
+                        sItalian.IsChecked = false;
+                        sFrench.IsChecked = false;*/
         }
 
 

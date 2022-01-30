@@ -28,7 +28,7 @@ namespace Fiszki_projekt
             {
                 return phrases.ElementAt(0).Item2;
             }
-            return "//Congratulations!//";
+            return "//Congratulation!//";
         }
         public string getCurrentWordinFirstLanguage()
         {
@@ -36,7 +36,7 @@ namespace Fiszki_projekt
             {
                 return phrases.ElementAt(0).Item2;
             }
-            return "//Congratulations!//";
+            return "//Congratulation!//";
         }
 
         public string getCurrentWordInSecondLanguage()
@@ -46,7 +46,7 @@ namespace Fiszki_projekt
             {
                 return phrases.ElementAt(0).Item3;
             }
-            return "//Congratulations!//";
+            return "//Congratulation!//";
         }
 
         public void storeKnownWord()

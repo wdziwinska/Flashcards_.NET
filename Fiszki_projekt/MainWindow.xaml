@@ -12,11 +12,11 @@
         </Grid>
 
         <Grid x:Name="test" Visibility="Visible">
-            <Button x:Name="nie_znam" Content="Nie znam"  Margin="47,380,316,0" VerticalAlignment="Top" Click="nie_umiem_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="45" FontSize="16"/>
-            <Button x:Name="pokaz_tlumaczenie" Content="Pokaż tłumaczenie" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Click="pokaz_tlumaczenie_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="45"  FontSize="16"/>
-            <Button x:Name="Znam" Content="Znam" Margin="323,380,39,0" VerticalAlignment="Top" Click="Znam_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="45" FontSize="16" />
+            <Button x:Name="nie_znam" Content="I don't know"  Margin="47,380,316,0" VerticalAlignment="Top" Click="nie_umiem_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="45" FontSize="16"/>
+            <Button x:Name="pokaz_tlumaczenie" Content="Translate" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Click="pokaz_tlumaczenie_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="45"  FontSize="16"/>
+            <Button x:Name="Znam" Content="I know" Margin="323,380,39,0" VerticalAlignment="Top" Click="Znam_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="45" FontSize="16" />
             <TextBox x:Name="Phrase" Height="264" Text="slowko" TextWrapping="Wrap" Width="228" FontSize="22" TextChanged="TextBox_TextChanged" Background="#FF2B303C" Foreground="#FF86C3FF" FontFamily="Nirmala UI" TextAlignment="Center" VerticalContentAlignment="Center" />
-            <Button x:Name="Wroc" Content="Wroc" Margin="239,10,12,0" VerticalAlignment="Top" Click="Wroc_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="43" Width="81" FontSize="16"/>
+            <Button x:Name="Wroc" Content="go back" Margin="239,10,12,0" VerticalAlignment="Top" Click="Wroc_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="43" Width="81" FontSize="16"/>
 
         </Grid>
         <Grid x:Name="languages" Visibility="Visible">
@@ -34,14 +34,17 @@
             <CheckBox Name="sItalian" Content="Italian" HorizontalAlignment="Left" Margin="282,181,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="18" Click="CheckBoxSecondLanguage_Click"/>
             <CheckBox Name="sFrench" Content="French" HorizontalAlignment="Left" Margin="282,206,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="18" Click="CheckBoxSecondLanguage_Click"/>
             <Label Content="Choose second &#xa;     language" HorizontalAlignment="Right" Margin="0,16,61,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="20"/>
-            <Button Name="Submit" Content="Submit" Margin="183,405,183,0" VerticalAlignment="Top" Click="Submit_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="43" FontSize="16" />
+            <Button Name="Submit" Content="Submit" IsHitTestVisible="False" Margin="183,405,183,0" VerticalAlignment="Top" Click="Submit_Click" FontFamily="Nirmala UI" Background="#FF2B303C" Foreground="#FF86C3FF" BorderBrush="#FF2B303C" Height="43" FontSize="16" />
             <Label Content="Set the number of &#xa;phrases to learn" HorizontalAlignment="Left" Margin="96,248,0,0" VerticalAlignment="Top" Foreground="#FF86C3FF" FontSize="18"/>
             <ComboBox Name="comboBox" IsEditable="true" Margin="264,272,146,170" FontFamily="Nirmala UI" Foreground = "#FF2B303C" BorderBrush="#FF2B303C" FontStretch="Normal" AutomationProperties.ItemType="int" AutomationProperties.IsRowHeader="True">
-                <ComboBoxItem Content="5"></ComboBoxItem>
+                <ComboBoxItem IsSelected="true" Content="5"></ComboBoxItem>
                 <ComboBoxItem Content="10"></ComboBoxItem>
                 <ComboBoxItem Content="15"></ComboBoxItem>
                 <ComboBoxItem Content="20"></ComboBoxItem>
-                <ComboBoxItem Content="25"></ComboBoxItem>
+                <ComboBoxItem Content="30"></ComboBoxItem>
+                <ComboBoxItem Content="50"></ComboBoxItem>
+                <ComboBoxItem Content="100"></ComboBoxItem>
+
             </ComboBox>
             <CheckBox Name="repetitions" Content="Repetitions" HorizontalAlignment="Left" Margin="263,332,0,0" VerticalAlignment="Top" FontFamily="Nirmala UI" Foreground = "#FF86C3FF" BorderBrush="#FF2B303C" FontSize="16" Click="CheckBoxWayToLearn_Click"/>
             <CheckBox Name="newPhrases" Content="New Phrases" HorizontalAlignment="Left" Margin="263,352,0,0" VerticalAlignment="Top" FontFamily="Nirmala UI" Foreground = "#FF86C3FF" BorderBrush="#FF2B303C" FontSize="16" Click="CheckBoxWayToLearn_Click"/>
