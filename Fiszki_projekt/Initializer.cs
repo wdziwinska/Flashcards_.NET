@@ -8,6 +8,6 @@ namespace Fiszki_projekt
     {
         void setLanguagesForLeaning(int firstLanguageName, int secondLanguageName, int numberOfWordtoLearn);
 
-        void setNumberOfWordsToLearn();
+        void wordsForRepetitions(int firstLanguageName, int secondLanguageName, int numberOfWordtoLearn);
     }
 }

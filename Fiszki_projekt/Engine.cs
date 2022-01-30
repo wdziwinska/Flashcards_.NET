@@ -14,15 +14,12 @@ namespace Fiszki_projekt
         RepetitionsDBImplementation repetitionsDBImplementationObject = new RepetitionsDBImplementation();
         public List<(int,string, string)> phrases;
 
-        private int firstLanguageId; // te zmienne powinne byc przypisane przez gui
-        private int secondLanguageId;
+        public int firstLanguageId; // te zmienne powinne byc przypisane przez gui
+        public int secondLanguageId;
 
 
         public Engine()
         {
-         
-            //phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
-
         }
 
         public string setCurrentWordinFirstLanguage()
@@ -31,7 +28,7 @@ namespace Fiszki_projekt
             {
                 return phrases.ElementAt(0).Item2;
             }
-            return "//Koniec cwiczenia//";
+            return "//Congratulations!//";
         }
         public string getCurrentWordinFirstLanguage()
         {
@@ -39,7 +36,7 @@ namespace Fiszki_projekt
             {
                 return phrases.ElementAt(0).Item2;
             }
-            return "//Koniec cwiczenia//";
+            return "//Congratulations!//";
         }
 
         public string getCurrentWordInSecondLanguage()
@@ -49,7 +46,7 @@ namespace Fiszki_projekt
             {
                 return phrases.ElementAt(0).Item3;
             }
-            return "//Koniec cwiczenia//";
+            return "//Congratulations!//";
         }
 
         public void storeKnownWord()
@@ -60,8 +57,6 @@ namespace Fiszki_projekt
                 knownWordsDBImplementationObject.storeKnownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage());
                 repetitionsDBImplementationObject.removeWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId);
             }
-            
-            
         }
        
         public void storeUnknownWord()
@@ -82,9 +77,9 @@ namespace Fiszki_projekt
             phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId, numberOfWordsToLearn);
         }
 
-        public void setNumberOfWordsToLearn()
+        public void wordsForRepetitions(int firstLanguageId, int secondLanguageId, int numberOfWordsToLearn)
         {
-
+            phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId);
         }
 
     }
