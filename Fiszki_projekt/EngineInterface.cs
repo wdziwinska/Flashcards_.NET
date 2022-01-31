@@ -8,12 +8,18 @@ namespace Fiszki_projekt
     {
         public string setCurrentWordinFirstLanguage();
 
+        public string getCurrentWordInSecondLanguage();
+
+        public string getCurrentWordinFirstLanguage();
+
+        public void storeKnownWord();
+
+        public void storeUnknownWord();
+
         void setLanguagesForLeaning(int firstLanguageName, int secondLanguageName, int numberOfWordtoLearn);
 
         void wordsForRepetitions(int firstLanguageName, int secondLanguageName, int numberOfWordtoLearn);
 
-        public string getCurrentWordInSecondLanguage();
-
-        public string getCurrentWordinFirstLanguage();
+        public void removeKnownWordsFromPhrases(int numberOfWordsToLearn);
     }
 }

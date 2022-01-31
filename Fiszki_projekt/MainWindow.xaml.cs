@@ -171,7 +171,7 @@ namespace Fiszki_projekt
                 fItalian.IsChecked = false;
                 nameCheckBox = "fFrench";
             }
-            if (comboBox.IsLoaded && ((bool)fPolish.IsChecked || (bool)fEnglish.IsChecked || (bool)fGerman.IsChecked || (bool)fRussian.IsChecked
+            if (comboBox.IsLoaded && ((bool)repetitions.IsChecked || (bool)newPhrases.IsChecked) && ((bool)fPolish.IsChecked || (bool)fEnglish.IsChecked || (bool)fGerman.IsChecked || (bool)fRussian.IsChecked
                 || (bool)fItalian.IsChecked || (bool)fFrench.IsChecked) && ((bool)sPolish.IsChecked || ( bool)sEnglish.IsChecked || (bool)sGerman.IsChecked
                 || (bool)sRussian.IsChecked || (bool)sItalian.IsChecked || (bool)sFrench.IsChecked))
             {
@@ -251,7 +251,7 @@ namespace Fiszki_projekt
                 sItalian.IsChecked = false;
                 nameCheckBoxSecondLanguage = "sFrench";
             }
-            if (comboBox.IsLoaded && ((bool)fPolish.IsChecked || (bool)fEnglish.IsChecked || (bool)fGerman.IsChecked || (bool)fRussian.IsChecked
+            if (comboBox.IsLoaded && ((bool)repetitions.IsChecked || (bool)newPhrases.IsChecked) && ((bool)fPolish.IsChecked || (bool)fEnglish.IsChecked || (bool)fGerman.IsChecked || (bool)fRussian.IsChecked
                 || (bool)fItalian.IsChecked || (bool)fFrench.IsChecked) && ((bool)sPolish.IsChecked || (bool)sEnglish.IsChecked || (bool)sGerman.IsChecked
                 || (bool)sRussian.IsChecked || (bool)sItalian.IsChecked || (bool)sFrench.IsChecked))
             {
