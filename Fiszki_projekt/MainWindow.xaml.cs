@@ -113,11 +113,54 @@ namespace Fiszki_projekt
                 sPolish.IsHitTestVisible = false;
                 fPolish.IsHitTestVisible = false;
 
-                fEnglish.IsHitTestVisible = true;
-                fGerman.IsHitTestVisible = true;
-                fRussian.IsHitTestVisible = true;
-                fItalian.IsHitTestVisible = true;
-                fFrench.IsHitTestVisible = true;
+                if (nameCheckBoxSecondLanguage == "sEnglish")
+                {
+                    //fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sGerman")
+                {
+                    fEnglish.IsHitTestVisible = true;
+                    //fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sRussian")
+                {
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    //fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sItalian")
+                {
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    //fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sFrench")
+                {
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    //fFrench.IsHitTestVisible = true;
+                }
+                else
+                {
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
 
                 fEnglish.IsChecked = false;
                 fGerman.IsChecked = false;
@@ -132,11 +175,54 @@ namespace Fiszki_projekt
                 sEnglish.IsHitTestVisible = false;
                 fEnglish.IsHitTestVisible = false;
 
-                fPolish.IsHitTestVisible = true;
-                fGerman.IsHitTestVisible = true;
-                fRussian.IsHitTestVisible = true;
-                fItalian.IsHitTestVisible = true;
-                fFrench.IsHitTestVisible = true;
+                if (nameCheckBoxSecondLanguage == "sPolish")
+                {
+                    //fPolish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sGerman")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    //fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sRussian")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    //fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sItalian")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    //fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sFrench")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    //fFrench.IsHitTestVisible = true;
+                }
+                else 
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
 
                 fPolish.IsChecked = false;
                 fGerman.IsChecked = false;
@@ -150,11 +236,54 @@ namespace Fiszki_projekt
                 sGerman.IsHitTestVisible = false;
                 fGerman.IsHitTestVisible = false;
 
-                fPolish.IsHitTestVisible = true;
-                fEnglish.IsHitTestVisible = true;
-                fRussian.IsHitTestVisible = true;
-                fItalian.IsHitTestVisible = true;
-                fFrench.IsHitTestVisible = true;
+                if (nameCheckBoxSecondLanguage == "sPolish")
+                {
+                    //fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sEnglish")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    //fEnglish.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sRussian")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    //fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sItalian")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    //fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sFrench")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    //fFrench.IsHitTestVisible = true;
+                }
+                else
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
 
                 fPolish.IsChecked = false;
                 fEnglish.IsChecked = false;
@@ -168,11 +297,54 @@ namespace Fiszki_projekt
                 sRussian.IsHitTestVisible = false;
                 fRussian.IsHitTestVisible = false;
 
-                fPolish.IsHitTestVisible = true;
-                fEnglish.IsHitTestVisible = true;
-                fGerman.IsHitTestVisible = true;
-                fItalian.IsHitTestVisible = true;
-                fFrench.IsHitTestVisible = true;
+                if (nameCheckBoxSecondLanguage == "sPolish")
+                {
+                    //fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sEnglish")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    //fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sGerman")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    //fGerman.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sItalian")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    //fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sFrench")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    //fFrench.IsHitTestVisible = true;
+                }
+                else
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
 
                 fPolish.IsChecked = false;
                 fEnglish.IsChecked = false;
@@ -187,11 +359,54 @@ namespace Fiszki_projekt
                 sItalian.IsHitTestVisible = false;
                 fItalian.IsHitTestVisible = false;
 
-                fPolish.IsHitTestVisible = true;
-                fEnglish.IsHitTestVisible = true;
-                fGerman.IsHitTestVisible = true;
-                fRussian.IsHitTestVisible = true;
-                fFrench.IsHitTestVisible = true;
+                if (nameCheckBoxSecondLanguage == "sPolish")
+                {
+                    //fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sEnglish")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    //fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sGerman")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    //fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sRussian")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    //fRussian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sFrench")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    //fFrench.IsHitTestVisible = true;
+                }
+                else
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fFrench.IsHitTestVisible = true;
+                }
 
                 fPolish.IsChecked = false;
                 fEnglish.IsChecked = false;
@@ -206,11 +421,54 @@ namespace Fiszki_projekt
                 sFrench.IsHitTestVisible = false;
                 fFrench.IsHitTestVisible = false;
 
-                fPolish.IsHitTestVisible = true;
-                fEnglish.IsHitTestVisible = true;
-                fGerman.IsHitTestVisible = true;
-                fRussian.IsHitTestVisible = true;
-                fItalian.IsHitTestVisible = true;
+                if (nameCheckBoxSecondLanguage == "sPolish")
+                {
+                    //fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sEnglish")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    //fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sGerman")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    //fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sRussian")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    //fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                }
+                else if (nameCheckBoxSecondLanguage == "sItalian")
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    //fItalian.IsHitTestVisible = true;
+                }
+                else
+                {
+                    fPolish.IsHitTestVisible = true;
+                    fEnglish.IsHitTestVisible = true;
+                    fGerman.IsHitTestVisible = true;
+                    fRussian.IsHitTestVisible = true;
+                    fItalian.IsHitTestVisible = true;
+                }
 
                 fPolish.IsChecked = false; 
                 fEnglish.IsChecked = false;
@@ -241,11 +499,55 @@ namespace Fiszki_projekt
                 fPolish.IsHitTestVisible = false;
                 sPolish.IsHitTestVisible = false;
 
-                sEnglish.IsHitTestVisible = true;
-                sGerman.IsHitTestVisible = true;
-                sRussian.IsHitTestVisible = true;
-                sItalian.IsHitTestVisible = true;
-                sFrench.IsHitTestVisible = true;
+                if (nameCheckBox == "fEnglish")
+                {
+                    //sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fGerman")
+                {
+                    sEnglish.IsHitTestVisible = true;
+                    //sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+
+                else if (nameCheckBox == "fRussian")
+                {
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    //sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fItalian")
+                {
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    //sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fFrench")
+                {
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    //sFrench.IsHitTestVisible = true;
+                }
+                else
+                {
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
 
                 sEnglish.IsChecked = false;
                 sGerman.IsChecked = false;
@@ -260,11 +562,55 @@ namespace Fiszki_projekt
                 fEnglish.IsHitTestVisible = false;
                 sEnglish.IsHitTestVisible = false;
 
-                sPolish.IsHitTestVisible = true;
-                sGerman.IsHitTestVisible = true;
-                sRussian.IsHitTestVisible = true;
-                sItalian.IsHitTestVisible = true;
-                sFrench.IsHitTestVisible = true;
+                if (nameCheckBox == "fPolish")
+                {
+                    //sPolish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fGerman")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    //sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+
+                else if (nameCheckBox == "fRussian")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    //sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fItalian")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    //sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fFrench")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    //sFrench.IsHitTestVisible = true;
+                }
+                else
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
 
                 sPolish.IsChecked = false;
                 sGerman.IsChecked = false;
@@ -278,11 +624,55 @@ namespace Fiszki_projekt
                 fGerman.IsHitTestVisible = false;
                 sGerman.IsHitTestVisible = false;
 
-                sPolish.IsHitTestVisible = true;
-                sEnglish.IsHitTestVisible = true;
-                sRussian.IsHitTestVisible = true;
-                sItalian.IsHitTestVisible = true;
-                sFrench.IsHitTestVisible = true;
+                if (nameCheckBox == "fPolish")
+                {
+                    //sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fEnglish")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    //sEnglish.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+
+                else if (nameCheckBox == "fRussian")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    //sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fItalian")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    //sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fFrench")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    //sFrench.IsHitTestVisible = true;
+                }
+                else
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
 
                 sPolish.IsChecked = false;
                 sEnglish.IsChecked = false;
@@ -296,11 +686,47 @@ namespace Fiszki_projekt
                 fRussian.IsHitTestVisible = false;
                 sRussian.IsHitTestVisible = false;
 
-                sPolish.IsHitTestVisible = true;
-                sEnglish.IsHitTestVisible = true;
-                sGerman.IsHitTestVisible = true;
-                sItalian.IsHitTestVisible = true;
-                sFrench.IsHitTestVisible = true;
+                if (nameCheckBox == "fPolish")
+                {
+                    //sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fEnglish")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    //sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+
+                else if (nameCheckBox == "fGerman")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    //sGerman.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fItalian")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    //sItalian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fFrench")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                    //sFrench.IsHitTestVisible = true;
+                }
 
                 sPolish.IsChecked = false;
                 sEnglish.IsChecked = false;
@@ -315,11 +741,55 @@ namespace Fiszki_projekt
                 fItalian.IsHitTestVisible = false;
                 sItalian.IsHitTestVisible = false;
 
-                sPolish.IsHitTestVisible = true;
-                sEnglish.IsHitTestVisible = true;
-                sGerman.IsHitTestVisible = true;
-                sRussian.IsHitTestVisible = true;
-                sFrench.IsHitTestVisible = true;
+                if (nameCheckBox == "fPolish")
+                {
+                    //sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fEnglish")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    //sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+
+                else if (nameCheckBox == "fGerman")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    //sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fRussian")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    //sRussian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fFrench")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    //sFrench.IsHitTestVisible = true;
+                }
+                else
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sFrench.IsHitTestVisible = true;
+                }
 
                 sPolish.IsChecked = false;
                 sEnglish.IsChecked = false;
@@ -334,11 +804,55 @@ namespace Fiszki_projekt
                 fFrench.IsHitTestVisible = false;
                 sFrench.IsHitTestVisible = false;
 
-                sPolish.IsHitTestVisible = true;
-                sEnglish.IsHitTestVisible = true;
-                sGerman.IsHitTestVisible = true;
-                sRussian.IsHitTestVisible = true;
-                sItalian.IsHitTestVisible = true;
+                if (nameCheckBox == "fPolish")
+                {
+                    //sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fEnglish")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    //sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                }
+
+                else if (nameCheckBox == "fGerman")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    //sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fRussian")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    //sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                }
+                else if (nameCheckBox == "fItalian")
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    //sItalian.IsHitTestVisible = true;
+                }
+                else 
+                {
+                    sPolish.IsHitTestVisible = true;
+                    sEnglish.IsHitTestVisible = true;
+                    sGerman.IsHitTestVisible = true;
+                    sRussian.IsHitTestVisible = true;
+                    sItalian.IsHitTestVisible = true;
+                }
 
                 sPolish.IsChecked = false;
                 sEnglish.IsChecked = false;
