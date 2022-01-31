@@ -6,7 +6,7 @@ using System.Windows.Documents;
 
 namespace Fiszki_projekt
 {
-    public class Engine : LearningProcessManager, WordClassifier, WordGetter, Initializer, WordSetter
+    public class Engine : EngineInterface
     {
         
         PhrasesDBImplementation phrasesDBImplementationObject = new PhrasesDBImplementation();
