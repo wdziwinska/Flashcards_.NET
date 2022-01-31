@@ -877,11 +877,15 @@ namespace Fiszki_projekt
             if ((bool)repetitions.IsChecked)
             {
                 newPhrases.IsChecked = false;
+                repetitions.IsHitTestVisible = false;
+                newPhrases.IsHitTestVisible = true;
                 nameCheckBoxWayToLearn = "repetitions";
             }
             else if((bool)newPhrases.IsChecked)
             {
                 repetitions.IsChecked = false;
+                newPhrases.IsHitTestVisible = false;
+                repetitions.IsHitTestVisible = true;
                 nameCheckBoxWayToLearn = "newPhrases";
             }
             if (comboBox.IsLoaded && ((bool)fPolish.IsChecked || (bool)fEnglish.IsChecked || (bool)fGerman.IsChecked || (bool)fRussian.IsChecked
