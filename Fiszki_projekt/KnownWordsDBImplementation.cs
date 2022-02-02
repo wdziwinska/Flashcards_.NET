@@ -220,6 +220,13 @@ namespace Fiszki_projekt
                 SqlCommand command3 = new SqlCommand(sql, sqlCon);
                 command3.ExecuteNonQuery();
             }
+            else
+            {
+                sql = String.Format("INSERT INTO dbo.knownWords (phraseID,{0},{1}) VALUES ({2},N'{3}',N'{4}')", firstLanguage, secondLanguage,phraseId, phraseInFirstLanguage, phraseInSecondLanguage);
+                SqlCommand command4 = new SqlCommand(sql, sqlCon);
+                System.Diagnostics.Debug.WriteLine(sql);
+                command4.ExecuteNonQuery();
+            }
         }
     }
 }
