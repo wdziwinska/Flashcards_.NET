@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Documents;
+using System.Data.SqlClient;
+using System.Windows;
 
 namespace Fiszki_projekt
 {
@@ -88,6 +90,27 @@ namespace Fiszki_projekt
             {
                 phrases.RemoveAt(i);
                 i--;
+            }
+        }
+
+        public void connectToDatabase()
+        {
+            SqlConnection sqlCon = new SqlConnection(@"Data Source = DESKTOP-VPA9T48; Initial Catalog=flashcardsDatabase; Integrated Security=True;");
+            try
+            {
+                if (sqlCon.State == System.Data.ConnectionState.Closed)
+                {
+                    sqlCon.Open();
+                    System.Diagnostics.Debug.WriteLine("Opened");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlCon.Close();
             }
         }
     }

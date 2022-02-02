@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
+
 namespace Fiszki_projekt
 {
     /// <summary>
@@ -941,6 +942,8 @@ namespace Fiszki_projekt
         {
             menu.Visibility=Visibility.Collapsed;
             languages.Visibility = Visibility.Visible;
+            engine.connectToDatabase();
+            
         }
 
 
