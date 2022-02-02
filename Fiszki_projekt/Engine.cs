@@ -57,7 +57,7 @@ namespace Fiszki_projekt
             // jezeli slowko nie jest zapisane to je zapisz
             if (phrases.Count > 0)
             {
-                knownWordsDBImplementationObject.storeKnownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage());
+                knownWordsDBImplementationObject.storeKnownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage(),sqlCon);
                 repetitionsDBImplementationObject.removeWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId);
             }
         }

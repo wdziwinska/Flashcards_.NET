@@ -17,8 +17,8 @@ namespace Fiszki_projekt
 {
     internal class KnownWordsDBImplementation : KnownWordsDBInterface
     {
-            public void storeKnownWord(int phraseId, int firstLanguageId, int secondLanguageId, string phraseInFirstLanguage, string phraseInSecondLanguage)
-         {
+           /* public void storeKnownWord(int phraseId, int firstLanguageId, int secondLanguageId, string phraseInFirstLanguage, string phraseInSecondLanguage)
+            {
              var csv = new StringBuilder();
              string pId = phraseId.ToString();
              string fId = firstLanguageId.ToString();
@@ -32,7 +32,7 @@ namespace Fiszki_projekt
             /* if (isWordKnown(phraseId, firstLanguageId, secondLanguageId))
              {
                  return;
-             }*/
+             }
 
              using (var reader = new StreamReader(@"knownWordsDatabase.csv"))
              {
@@ -99,7 +99,7 @@ namespace Fiszki_projekt
                  File.AppendAllText("knownWordsDatabase.csv", csv.ToString());
 
              }
-         }
+         }*/
 
         /* public bool isWordKnown(int phraseId, int firstLanguageId, int secondLanguageId)
          {
@@ -127,6 +127,7 @@ namespace Fiszki_projekt
              }
 
          }*/
+
         public bool isWordKnown(int phraseId, int firstLanguageId, int secondLanguageId, SqlConnection sqlCon)
         {
             SqlCommand command;
@@ -152,6 +153,73 @@ namespace Fiszki_projekt
             return false;
         }
 
-       
+        public string languageIdToName(int languageId)
+        {
+            switch (languageId)
+            {
+                case 1:
+                    return "Polish";
+                    break;
+                case 2:
+                    return "English";
+                    break;
+                case 3:
+                    return "German";
+                    break;
+                case 4:
+                    return "Russian";
+                    break;
+                case 5:
+                    return "Italian";
+                    break;
+                case 6:
+                    return "French";
+                    break;
+                default:
+                    return "error";
+            }
+
+        }
+
+        public void storeKnownWord(int phraseId, int firstLanguageId, int secondLanguageId, string phraseInFirstLanguage, string phraseInSecondLanguage, SqlConnection sqlCon)
+        {
+            bool isInDB = false;
+            int counter=0;
+            string firstLanguage=languageIdToName(firstLanguageId);
+            string secondLanguage=languageIdToName(secondLanguageId);
+         
+            if (isWordKnown(phraseId, firstLanguageId, secondLanguageId, sqlCon))
+            {
+                return;
+            }
+            SqlCommand command;
+            SqlDataReader dataReader;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            String sql;
+
+            sql = "Select * FROM dbo.knownWords";
+            command = new SqlCommand(sql, sqlCon);
+            dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                counter++;
+                if (phraseId == (int)dataReader.GetValue(0))
+                {
+                    isInDB = true;
+                    break;
+                }
+            }
+            dataReader.Close();
+
+            if (isInDB)
+            {
+                sql = String.Format("UPDATE dbo.knownWords SET {0} = N'{1}' WHERE phraseId = {2}",firstLanguage,phraseInFirstLanguage,phraseId);
+                SqlCommand command2 = new SqlCommand(sql, sqlCon);
+                command2.ExecuteNonQuery();
+                sql = String.Format("UPDATE dbo.knownWords SET {0} = N'{1}' WHERE phraseId = {2}", secondLanguage, phraseInSecondLanguage, phraseId);
+                SqlCommand command3 = new SqlCommand(sql, sqlCon);
+                command3.ExecuteNonQuery();
+            }
+        }
     }
 }
