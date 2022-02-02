@@ -18,10 +18,12 @@ namespace Fiszki_projekt
 
         public int firstLanguageId; // te zmienne powinne byc przypisane przez gui
         public int secondLanguageId;
+        public SqlConnection sqlCon;
 
 
         public Engine()
         {
+            sqlCon = new SqlConnection(@"Data Source = DESKTOP-VPA9T48; Initial Catalog=flashcardsDatabase; Integrated Security=True;");
         }
 
         public string setCurrentWordinFirstLanguage()
@@ -95,7 +97,7 @@ namespace Fiszki_projekt
 
         public void connectToDatabase()
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source = DESKTOP-VPA9T48; Initial Catalog=flashcardsDatabase; Integrated Security=True;");
+            
             try
             {
                 if (sqlCon.State == System.Data.ConnectionState.Closed)
@@ -103,15 +105,32 @@ namespace Fiszki_projekt
                     sqlCon.Open();
                     System.Diagnostics.Debug.WriteLine("Opened");
                 }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
+           /* finally
             {
                 sqlCon.Close();
+            }*/
+        }
+
+        public void readFromDatabase()
+        {
+            SqlCommand command;
+            SqlDataReader dataReader;
+            String sql, Output = "";
+
+            sql = "Select * FROM dbo.phrasesBase WHERE phraseId=1";
+            command = new SqlCommand(sql, sqlCon);
+            dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                Output = Output + dataReader.GetValue(firstLanguageId) + " - " + dataReader.GetValue(secondLanguageId) + "\n";
             }
+            MessageBox.Show(Output);
         }
     }
 }
