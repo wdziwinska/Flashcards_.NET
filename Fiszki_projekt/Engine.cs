@@ -58,7 +58,7 @@ namespace Fiszki_projekt
             if (phrases.Count > 0)
             {
                 knownWordsDBImplementationObject.storeKnownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage(),sqlCon);
-                repetitionsDBImplementationObject.removeWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId);
+                repetitionsDBImplementationObject.removeWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId,sqlCon);
             }
         }
        
@@ -68,7 +68,7 @@ namespace Fiszki_projekt
             {
                 if (!knownWordsDBImplementationObject.isWordKnown(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId,sqlCon))
                 {
-                    repetitionsDBImplementationObject.storeUnknownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage());
+                    repetitionsDBImplementationObject.storeUnknownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage(),sqlCon);
                 }
             } 
         }
@@ -80,7 +80,7 @@ namespace Fiszki_projekt
 
         public void wordsForRepetitions(int firstLanguageId, int secondLanguageId, int numberOfWordsToLearn)
         {
-            phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId, numberOfWordsToLearn);
+            phrases = repetitionsDBImplementationObject.getWordsForRepetition(firstLanguageId, secondLanguageId, numberOfWordsToLearn,sqlCon);
             System.Diagnostics.Debug.WriteLine(phrases);
         }
 

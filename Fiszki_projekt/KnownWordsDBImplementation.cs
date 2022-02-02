@@ -142,7 +142,7 @@ namespace Fiszki_projekt
                 {
                     if ((string)dataReader.GetValue(firstLanguageId)!="" && (string)dataReader.GetValue(secondLanguageId) != "")
                     {
-                        System.Diagnostics.Debug.WriteLine("Slowo: " + (string)dataReader.GetValue(firstLanguageId) + ", tlumaczenie: " + (string)dataReader.GetValue(secondLanguageId));
+                        //System.Diagnostics.Debug.WriteLine("Slowo: " + (string)dataReader.GetValue(firstLanguageId) + ", tlumaczenie: " + (string)dataReader.GetValue(secondLanguageId));
                         return true;
                     }
                 }
@@ -224,7 +224,7 @@ namespace Fiszki_projekt
             {
                 sql = String.Format("INSERT INTO dbo.knownWords (phraseID,{0},{1}) VALUES ({2},N'{3}',N'{4}')", firstLanguage, secondLanguage,phraseId, phraseInFirstLanguage, phraseInSecondLanguage);
                 SqlCommand command4 = new SqlCommand(sql, sqlCon);
-                System.Diagnostics.Debug.WriteLine(sql);
+              //  System.Diagnostics.Debug.WriteLine(sql);
                 command4.ExecuteNonQuery();
             }
         }
