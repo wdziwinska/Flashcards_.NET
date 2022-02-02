@@ -292,6 +292,7 @@ namespace Fiszki_projekt
             }
             SqlCommand command;
             SqlCommand command2;
+            SqlCommand command3;
             SqlDataReader dataReader;
             string firstLanguage = languageIdToName(firstLanguageId);
             string secondLanguage = languageIdToName(secondLanguageId);
@@ -302,6 +303,29 @@ namespace Fiszki_projekt
             sql = String.Format("UPDATE dbo.wordsForRepetition SET {0} = '' WHERE phraseId = {1}", secondLanguage, phraseId);
             command2 = new SqlCommand(sql, sqlCon);
             command2.ExecuteNonQuery();
+
+            sql = "Select * FROM dbo.wordsForRepetition";
+            command = new SqlCommand(sql, sqlCon);
+            dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+              /*  if (phraseId == (int)dataReader.GetValue(0))
+                {
+                    isInDB = true;
+                    break;
+                }*/
+                for (int i = 1; i < dataReader.FieldCount; i++)
+                {
+                    if ((string)dataReader.GetValue(i) != "")
+                    {
+                        break;
+                    }
+                    sql = String.Format("DELETE FROM dbo.wordsForRepetition WHERE phraseId = {0}",phraseId);
+                    command3 = new SqlCommand(sql, sqlCon);
+                    command3.ExecuteNonQuery();
+                }
+            }
+            dataReader.Close();
         }
 
 
