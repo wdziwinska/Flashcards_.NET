@@ -23,7 +23,7 @@ namespace Fiszki_projekt
 
         public Engine()
         {
-            sqlCon = new SqlConnection(@"Data Source = DESKTOP-VPA9T48; Initial Catalog=flashcardsDatabase; Integrated Security=True;");
+            sqlCon = new SqlConnection(@"Data Source = DESKTOP-VPA9T48; Initial Catalog=flashcardsDatabase; Integrated Security=True; MultipleActiveResultSets=true;");
         }
 
         public string setCurrentWordinFirstLanguage()
@@ -66,7 +66,7 @@ namespace Fiszki_projekt
         {       
             if (phrases.Count > 0) // rozbite na dwa if, bo jak zrobie w jednym && to nie dziala
             {
-                if (!knownWordsDBImplementationObject.isWordKnown(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId))
+                if (!knownWordsDBImplementationObject.isWordKnown(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId,sqlCon))
                 {
                     repetitionsDBImplementationObject.storeUnknownWord(phrases.ElementAt(0).Item1, firstLanguageId, secondLanguageId, getCurrentWordinFirstLanguage(), getCurrentWordInSecondLanguage());
                 }
@@ -86,7 +86,7 @@ namespace Fiszki_projekt
 
         public void removeKnownWordsFromPhrases(int numberOfWordsToLearn)
         {   
-            phrases.RemoveAll(i => knownWordsDBImplementationObject.isWordKnown(i.Item1, firstLanguageId, secondLanguageId));
+            phrases.RemoveAll(i => knownWordsDBImplementationObject.isWordKnown(i.Item1, firstLanguageId, secondLanguageId,sqlCon));
             int i =phrases.Count-1;
             while (phrases.Count > numberOfWordsToLearn)
             {

@@ -44,7 +44,7 @@ namespace Fiszki_projekt
             var retList = new List<(int, string, string)>();
             SqlCommand command;
             SqlDataReader dataReader;
-            String sql, Output = "";
+            String sql;
 
             sql = "Select * FROM dbo.phrasesBase";
             command = new SqlCommand(sql, sqlCon);
