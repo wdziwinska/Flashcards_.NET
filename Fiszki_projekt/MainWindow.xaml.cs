@@ -97,7 +97,7 @@ namespace Fiszki_projekt
                 engine.setLanguagesForLeaning(firstLanguageId, secondLanguageId, numberOfWordtolearn);
             }
             engine.removeKnownWordsFromPhrases(numberOfWordtolearn);
-            engine.readFromDatabase();
+            //engine.readFromDatabase();
             Phrase.Text = engine.setCurrentWordinFirstLanguage();
             
         }

@@ -75,7 +75,7 @@ namespace Fiszki_projekt
 
         public void setLanguagesForLeaning(int firstLanguageId, int secondLanguageId, int numberOfWordsToLearn)
         {
-            phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId, numberOfWordsToLearn);
+            phrases = phrasesDBImplementationObject.getWord(1, firstLanguageId, secondLanguageId, numberOfWordsToLearn, sqlCon);
         }
 
         public void wordsForRepetitions(int firstLanguageId, int secondLanguageId, int numberOfWordsToLearn)
@@ -117,20 +117,21 @@ namespace Fiszki_projekt
             }*/
         }
 
-        public void readFromDatabase()
+       /* public void readFromDatabase()
         {
             SqlCommand command;
-            SqlDataReader dataReader;
+            SqlDataReader dataReader2;
             String sql, Output = "";
 
-            sql = "Select * FROM dbo.phrasesBase WHERE phraseId=1";
+            sql = "Select * FROM dbo.phrasesBase";
             command = new SqlCommand(sql, sqlCon);
-            dataReader = command.ExecuteReader();
-            while (dataReader.Read())
+            dataReader2 = command.ExecuteReader();
+            while (dataReader2.Read())
             {
-                Output = Output + dataReader.GetValue(firstLanguageId) + " - " + dataReader.GetValue(secondLanguageId) + "\n";
+                Output = Output + dataReader2.GetValue(firstLanguageId) + " - " + dataReader2.GetValue(secondLanguageId) + "\n";
             }
             MessageBox.Show(Output);
-        }
+            dataReader2.Close();
+        }*/
     }
 }
