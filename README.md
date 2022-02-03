@@ -1,8 +1,8 @@
 # Flashcards_.NET
 
-Application allows learn 6 languages by flashcards. 
+Application allows the user to learn 6 languages by using flashcards
 
-At the beginning user must choose one primary language and language to learn by check one checkbox from first language and one checkbox from second language. Choosing the same languages is impossible. 
+At the beginning the user has to choose first language and second language to learn, by checking one of the checkboxes from first list, and one from the second list. Choosing the same language in both lists is impossible. 
 
 <img src="https://user-images.githubusercontent.com/55066543/152377204-fefdb68b-6036-4e9f-83e0-8be664095546.png" width="400" height="432" >
 
@@ -18,7 +18,7 @@ If there are no phrases to repeat, an error message is being shown.
 
 <img src="https://user-images.githubusercontent.com/55066543/152355515-9be40add-4bfa-4eb5-8db2-ac0a71d00796.png" width="410" height="250" >
 
-After choosing languages, number of words to learn and way to learn and clicking button "submit" the user can start to learn phrases. Clicking button "translate" causes showing phrases in second language. The button "I know" adds phrase to database known words, thanks to this the user can focus himself only on unknown words. The button "I don't know" adds phrase to database unknown words, thanks to this the user can learn the same phrases many of times.  
+After choosing languages, number of words to learn and way to learn and clicking button "submit" the user can start to learn phrases. Clicking button "translate" shows phrases in second language. The button "I know" adds phrase to database of known words, thanks to this the user can focus themselfs only on unknown words. The button "I don't know" adds phrase to database of unknown words, thanks to this the user can repeat the same phrases many times.  
 
 <img src="https://user-images.githubusercontent.com/55066543/152355618-a43fe7a2-1a22-4349-a8f1-5bdde6c0a06f.png" width="400" height="432" >
 
